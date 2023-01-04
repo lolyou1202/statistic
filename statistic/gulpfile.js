@@ -187,7 +187,7 @@ const webserver = () => {
 };
 
 const runServer = () => {
-  var proc = exec('venv\\Scripts\\activate.bat && set PYTHONUNBUFFERED=1 && '+ 'python backend/main.py runserver ', webserver)
+  var proc = exec('venv\\Scripts\\activate.bat && set PYTHONUNBUFFERED=1 && '+ 'python backend/main.py runserver', webserver)
   proc.stderr.on('data', function(data) {
     process.stdout.write(data);
   });
@@ -198,15 +198,9 @@ const runServer = () => {
 };
 
 const watchFiles = () => {
-  browserSync.init(
-    {
-      server: {
-        baseDir: './assets/build'
-      },
-      notify: false,
-      port: "5000"
-    }, runServer()
-  )
+  webserver();
+  runServer();
+
   watch(paths.srcScss, styles);
   watch(paths.srcFullJs, scripts);
   watch(`${paths.srcPartialsFolder}/*.html`, htmlInclude);

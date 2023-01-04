@@ -13,6 +13,7 @@ html {
 .page {
   height: 100%;
   font-family: var(--font-family, sans-serif);
+  color: var(--primary-font);
 }
 
 .page__body {
@@ -126,6 +127,8 @@ a {
     }
     &.selected {
       background: var(--selected);
+      cursor: default;
+      pointer-events: none;
     }
   }
 }
