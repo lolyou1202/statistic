@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/standings.scss","components/standings.css"],"names":[],"mappings":"AAAA;EACI,kBAAA;ACCJ","file":"components/standings.css","sourcesContent":[".standings {\r\n    padding: 15px 20px;\r\n    \r\n}",".standings {\n  padding: 15px 20px;\n}"]}
