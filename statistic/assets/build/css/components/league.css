@@ -1,0 +1,63 @@
+.league {
+  padding: 15px 20px;
+}
+.league-selects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.league-selection button {
+  width: 130px;
+}
+.league .season-selection {
+  margin-left: 15px;
+}
+.league .season-selection button {
+  width: 68px;
+}
+.league-card {
+  margin: 16px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--primary-font);
+}
+.league-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--primary);
+  margin-right: 20px;
+}
+.league-name {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  margin-bottom: 15px;
+}
+.league-country {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.league-country .country-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--primary);
+  margin-right: 8px;
+}
+.league-country .country-name {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+}
+/*# sourceMappingURL=league.css.map */

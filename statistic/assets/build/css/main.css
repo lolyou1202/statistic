@@ -1,0 +1,393 @@
+:root {
+  --font-family: "Ubuntu", sans-serif;
+  --content-width: 1170px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --primary: #DFE7F1;
+  --primary-second: #F0F4FA;
+  --primary-second-hover: #C3CFE2;
+  --selected: #D0D8E4;
+  --primary-font: #434E61;
+}
+
+/* stylelint-disable */ /* stylelint-disable */
+.custom-checkbox__input:checked + .custom-checkbox__field {
+  background-image: url(../../img/main-dashboard/check.svg);
+  background-position: center;
+  background-size: 18px;
+  border: 2px solid var(--primary) !important;
+}
+
+.custom-checkbox__input:focus-visible + .custom-checkbox__field {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.custom-checkbox__input:disabled + .custom-checkbox__field {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.toggle {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.toggle-switch {
+  background: #E0E5F2;
+  border-radius: 40px;
+  width: 36px;
+  height: 18px;
+  position: relative;
+  -webkit-transition: background ease-in-out 0.25s;
+  -o-transition: background ease-in-out 0.25s;
+  transition: background ease-in-out 0.25s;
+}
+
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+
+.toggle-switch:before {
+  display: inline-block;
+  background: #fff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  -webkit-transition: left ease-in-out 0.25s;
+  -o-transition: left ease-in-out 0.25s;
+  transition: left ease-in-out 0.25s;
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+  background: var(--primary);
+}
+
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 20px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.toggle-label {
+  margin-left: 15px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: var(--main);
+}
+
+/* stylelint-disable */ /* stylelint-disable */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/../Ubuntu-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/../Ubuntu-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/../Ubuntu-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/../Ubuntu-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+}
+
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--main-background);
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+}
+.input-reset::-webkit-search-decoration, .input-reset::-webkit-search-cancel-button, .input-reset::-webkit-search-results-button, .input-reset::-webkit-search-results-decoration {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.custom-checkbox {
+  position: relative;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.custom-checkbox__input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+}
+.custom-checkbox__field {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--secondary);
+  border-radius: 2px;
+}
+.custom-checkbox__content {
+  padding-left: 35px;
+}
+
+.select {
+  display: inline-block;
+  position: relative;
+}
+.select button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  cursor: pointer;
+  height: 24px;
+  padding: 5px 8px 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--primary);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--primary-font);
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.select button:hover {
+  background-color: var(--primary-second-hover);
+}
+.select button span {
+  margin-right: 4px;
+}
+.select ul {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 2px);
+  max-height: 0;
+  background: var(--primary);
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 11px;
+  color: var(--primary-font);
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.select.active ul {
+  max-height: 100vh;
+}
+.select li {
+  padding: 4px;
+  margin: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.select li:hover {
+  background: var(--primary-second-hover);
+}
+.select li.selected {
+  background: var(--selected);
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(570px, 1fr) minmax(900px, 1fr) minmax(350px, 1fr);
+  grid-template-columns: minmax(570px, 1fr) minmax(900px, 1fr) minmax(350px, 1fr);
+  grid-column-gap: 20px;
+}
+
+.left > div, .right > div {
+  background: var(--primary-second);
+  border-radius: 16px;
+}
+
+.left {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 220px 1fr;
+  grid-template-rows: 220px 1fr;
+  grid-row-gap: 20px;
+}
+
+.middle {
+  background: var(--primary-second);
+  border-radius: 16px;
+}
+
+.right {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 330px 195px 1fr;
+  grid-template-rows: 330px 195px 1fr;
+  grid-row-gap: 20px;
+}
+
+.league {
+  padding: 15px 20px;
+}
+.league-selects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.league-selection button {
+  width: 130px;
+}
+.league .season-selection {
+  margin-left: 15px;
+}
+.league .season-selection button {
+  width: 68px;
+}
+.league-card {
+  margin: 16px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--primary-font);
+}
+.league-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--primary);
+  margin-right: 20px;
+}
+.league-name {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  margin-bottom: 15px;
+}
+.league-country {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.league-country .country-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--primary);
+  margin-right: 8px;
+}
+.league-country .country-name {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,54 @@
+.league {
+    padding: 15px 20px;
+    &-selects {
+        display: flex;
+    }
+    &-selection {
+        button {
+            width: 130px;
+        }
+    }
+    .season-selection {
+        margin-left: 15px;
+        button {
+            width: 68px;
+        }
+    }
+    &-card {
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        color: var(--primary-font);
+    }
+    &-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: var(--primary);
+        margin-right: 20px;
+    }
+    &-name {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 100%;
+        margin-bottom: 15px;
+    }
+    &-country {
+        display: flex;
+        align-items:center;
+        .country-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--primary);
+            margin-right: 8px;
+        }
+        .country-name {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 100%;
+        }
+    }
+}
