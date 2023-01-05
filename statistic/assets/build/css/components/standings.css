@@ -1,5 +1,6 @@
 .standings {
-  padding: 15px 20px;
+  padding: 15px 0 15px 20px;
+  height: calc(100vh - 280px);
 }
 .standings__head {
   display: -webkit-box;
@@ -12,6 +13,7 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 15px;
+  padding-right: 20px;
 }
 .standings__head-title {
   font-weight: 700;
@@ -35,6 +37,7 @@
   grid-template-columns: 26px minmax(100px, 1fr) repeat(2, 26px) 120px 38px;
   grid-column-gap: 15px;
   margin-bottom: 10px;
+  padding-right: 20px;
 }
 .standings__caption > div {
   display: -webkit-inline-box;
@@ -74,6 +77,26 @@
 }
 .standings__caption span:hover {
   background: var(--primary);
+}
+.standings__caption + hr {
+  width: calc(100% - 20px);
+  height: 1px;
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+}
+.standings__body {
+  padding-right: 6px;
+  margin-right: 8px;
+  overflow-y: scroll;
+  height: calc(100vh - 371px);
+}
+.standings__body::-webkit-scrollbar {
+  width: 6px;
+}
+.standings__body::-webkit-scrollbar-thumb {
+  background-color: rgba(67, 78, 97, 0.3);
+  border-radius: 20px;
 }
 .standings__body-item {
   display: -ms-grid;
@@ -133,7 +156,6 @@
   width: 24px;
   height: 24px;
   border-radius: 5px;
-  background-color: var(--selected);
   background-size: cover;
   margin-right: 8px;
 }
@@ -149,8 +171,13 @@
   justify-content: center;
   height: 20px;
   width: 20px;
-  background: #00CC00;
   color: #fff;
   border-radius: 5px;
+}
+.standings__body-item span .standings__last-five.win {
+  background: #00CC00;
+}
+.standings__body-item span .standings__last-five.lose {
+  background: #FF0000;
 }
 /*# sourceMappingURL=standings.css.map */

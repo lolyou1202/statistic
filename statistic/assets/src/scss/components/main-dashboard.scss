@@ -3,8 +3,9 @@
     height: 100vh;
     padding: 20px 30px;
     display: grid;
-    grid-template-columns: minmax(570px, 1fr) minmax(900px, 1fr) minmax(350px, 1fr);
+    grid-template-columns: minmax(406px, 1fr) minmax(500px, 1fr) minmax(350px, 1fr);
     grid-column-gap: 20px;
+    //overflow: hidden;
 }
 
 .left, .right {
@@ -22,7 +23,7 @@
 .middle {
     background: var(--primary-second);
     border-radius: 16px;
-
+    height: calc(100vh - 40px);
 }
 .right {
     display: grid;
