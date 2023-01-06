@@ -200,7 +200,7 @@ fillingline(30, '19 Oct', '1 Jan', '14 Jun');
   \***************************************************/
 /***/ (() => {
 
-let json = {
+let jsonTeams = {
   1: {
     position: '1',
     team: {
@@ -367,7 +367,17 @@ let json = {
     percent: '0.23'
   }
 };
-let fillingTable = function (json) {
+let jsonTopPlayers = {
+  1: {
+    position: '1',
+    team: {
+      imageUrl: '../img/pngegg.png',
+      name: 'Stephen Curry'
+    },
+    percent: '0.58'
+  }
+};
+let fillingStandings = function (json) {
   let body = document.querySelector('.standings__body');
   body.innerHTML = '';
   for (let key in json) {
@@ -417,7 +427,36 @@ let fillingTable = function (json) {
     }
   }
 };
-fillingTable(json);
+let fillingTopPlayers = function (json) {
+  let body = document.querySelector('.topPlayers__body');
+  body.innerHTML = '';
+  for (let key in json) {
+    let li = document.createElement('li');
+    let hr = document.createElement('hr');
+    li.classList.add('topPlayers__body-item');
+    li.innerHTML = `
+        <div>
+            <span>${json[key].position}</span>
+        </div>
+        <div>
+            <span>
+                <div class="topPlayers__team-img"></div>
+                <p class="topPlayers__team-name">${json[key].team.name}</p>
+            </span>
+        </div>
+        <div>
+            <span>${json[key].percent}</span>
+        </div>
+      `;
+    li.querySelector('.topPlayers__team-img').style.backgroundImage = `url(${json[key].team.imageUrl})`;
+    body.appendChild(li);
+    if (!(Object.keys(json).length == key)) {
+      body.appendChild(hr);
+    }
+  }
+};
+fillingStandings(jsonTeams);
+//fillingTopPlayers(jsonTopPlayers);
 
 /***/ }),
 
