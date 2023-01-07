@@ -300,8 +300,8 @@ a {
   padding: 20px 30px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(406px, 1fr) minmax(700px, 1fr) 350px;
-  grid-template-columns: minmax(406px, 1fr) minmax(700px, 1fr) 350px;
+  -ms-grid-columns: minmax(450px, 570px) minmax(700px, 1fr) 350px;
+  grid-template-columns: minmax(450px, 570px) minmax(700px, 1fr) 350px;
   grid-column-gap: 20px;
 }
 
@@ -321,6 +321,7 @@ a {
 .middle {
   background: var(--primary-second);
   border-radius: 16px;
+  width: 100%;
   height: calc(100vh - 40px);
 }
 
@@ -330,6 +331,13 @@ a {
   -ms-grid-rows: 330px 195px 1fr;
   grid-template-rows: 330px 195px 1fr;
   grid-row-gap: 20px;
+}
+
+.sidebar {
+  display: none;
+  background: var(--primary-second);
+  border-radius: 16px;
+  height: calc(100vh - 40px);
 }
 
 .league {
@@ -482,7 +490,7 @@ a {
   height: 20px;
   padding: 0 5px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 5px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -503,7 +511,7 @@ a {
   padding-right: 6px;
   margin-right: 8px;
   overflow-y: scroll;
-  height: calc(100vh - 371px);
+  height: calc(100vh - 380px);
 }
 .standings__body::-webkit-scrollbar {
   width: 6px;
@@ -560,7 +568,7 @@ a {
   justify-content: center;
   padding: 0 5px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 8px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -790,38 +798,37 @@ a {
   background-size: cover;
 }
 
-@media (max-width: 1430px) {
+@media (max-width: 1720px) {
   .standings__caption {
-    -ms-grid-columns: 26px minmax(100px, 1fr) (26px)[2] 100px 38px;
-    grid-template-columns: 26px minmax(100px, 1fr) repeat(2, 26px) 100px 38px;
+    -ms-grid-columns: 20px minmax(142px, 1fr) (20px)[2] 120px 38px;
+    grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 120px 38px;
     grid-column-gap: 10px;
-  }
-  .standings__caption span {
-    height: 20px;
-    font-size: 12px;
-    border-radius: 5px;
   }
   .standings__body-item {
-    -ms-grid-columns: 26px minmax(100px, 1fr) (26px)[2] 100px 38px;
-    grid-template-columns: 26px minmax(100px, 1fr) repeat(2, 26px) 100px 38px;
+    -ms-grid-columns: 20px minmax(142px, 1fr) (20px)[2] 120px 38px;
+    grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 120px 38px;
     grid-column-gap: 10px;
   }
-  .standings__body-item span {
-    font-weight: 500;
-    font-size: 12px;
+  .standings__body-item > div:nth-child(2) span {
+    padding: 4px 6px 4px 4px;
   }
-  .standings__body-item span .standings__last-five {
-    height: 16px;
-    width: 16px;
+  .standings__body-item span {
+    font-size: 14px;
+  }
+  .standings__body-item span .standings__team-img {
+    margin-right: 6px;
   }
 }
 @media (max-width: 1600px) {
   .main {
-    -ms-grid-columns: minmax(406px, 1fr) minmax(900px, 1fr);
-    grid-template-columns: minmax(406px, 1fr) minmax(900px, 1fr);
+    -ms-grid-columns: 450px minmax(700px, 1fr) 64px;
+    grid-template-columns: 450px minmax(700px, 1fr) 64px;
   }
   .right {
     display: none;
+  }
+  .sidebar {
+    display: block;
   }
 }
 /*# sourceMappingURL=main.css.map */

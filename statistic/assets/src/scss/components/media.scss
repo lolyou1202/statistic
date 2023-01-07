@@ -1,24 +1,22 @@
-@media (max-width: 1430px) {
+@media (max-width: 1720px) {
     .standings {
         &__caption {
-            grid-template-columns: 26px minmax(100px, 1fr) repeat(2, 26px) 100px 38px;
+            grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 120px 38px;
             grid-column-gap: 10px;
-            span {
-                height: 20px;
-                font-size: 12px;
-                border-radius: 5px;
-            }
         }
         &__body {
             &-item {
-                grid-template-columns: 26px minmax(100px, 1fr) repeat(2, 26px) 100px 38px;
+                grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 120px 38px;
                 grid-column-gap: 10px;
+                & > div {
+                    &:nth-child(2) span {
+                        padding: 4px 6px 4px 4px;
+                    }
+                }
                 span {
-                    font-weight: 500;
-                    font-size: 12px;
-                    .standings__last-five {
-                        height: 16px;
-                        width: 16px;
+                    font-size: 14px;
+                    .standings__team-img {
+                        margin-right: 6px;
                     }
                 }
             }
@@ -27,9 +25,28 @@
 }
 @media (max-width: 1600px) {
     .main {
-        grid-template-columns: minmax(406px, 1fr) minmax(900px, 1fr);
+        grid-template-columns: 450px minmax(700px, 1fr) 64px;
     }
     .right {
         display: none;
+    }
+    .sidebar {
+        display: block;
+    }
+    &__caption {
+        display: grid;
+        grid-template-columns: 26px minmax(100px, 1fr) repeat(2, 26px) 120px 38px;
+        grid-column-gap: 15px;
+        margin-bottom: 10px;
+        padding-right: 20px;
+        & > div {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+            &:nth-child(2) span {
+                width: auto;
+                padding: 0 10px;
+            }
+        }
     }
 }
