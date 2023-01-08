@@ -1,4 +1,7 @@
 @media (max-width: 1720px) {
+    .main {
+        grid-template-columns: 450px minmax(700px, 820px) 350px;
+    }
     .standings {
         &__caption {
             grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 120px 38px;
@@ -25,7 +28,7 @@
 }
 @media (max-width: 1600px) {
     .main {
-        grid-template-columns: 450px minmax(700px, 1fr) 64px;
+        grid-template-columns: 320px minmax(700px, 1fr) 64px;
     }
     .right {
         display: none;
@@ -33,20 +36,29 @@
     .sidebar {
         display: block;
     }
-    &__caption {
-        display: grid;
-        grid-template-columns: 26px minmax(100px, 1fr) repeat(2, 26px) 120px 38px;
-        grid-column-gap: 15px;
-        margin-bottom: 10px;
-        padding-right: 20px;
-        & > div {
-            display: inline-flex;
-            align-items: center;
-            justify-content: flex-start;
-            &:nth-child(2) span {
-                width: auto;
-                padding: 0 10px;
+    .standings {
+        &__caption {
+            grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 38px;
+            grid-column-gap: 10px;
+            & > div:nth-child(5) {
+                display: none;
+            }
+        }
+        &__body {
+            &-item {
+                grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 38px;
+                grid-column-gap: 10px;
+                & > div:nth-child(5) {
+                    display: none;
+                }
+                span {
+                    font-size: 14px;
+                    .standings__team-img {
+                        margin-right: 6px;
+                    }
+                }
             }
         }
     }
+
 }

@@ -169,9 +169,121 @@ let jsonTeams = {
 let jsonTopPlayers = {
     1: {
       position: '1',
-      team: {
-        imageUrl: '../img/pngegg.png',
-        name: 'Stephen Curry',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    2: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    3: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    4: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    5: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    6: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    7: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    8: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    9: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
+      },
+      percent: '0.58',
+    },
+    10: {
+      position: '1',
+      player: {
+        team: '../img/pngegg.png',
+        person: {
+          img: '../img/pngegg.png',
+          name: 'Stephen Curry',
+          position: 'Guard'
+        }
       },
       percent: '0.58',
     },
@@ -242,19 +354,26 @@ let fillingTopPlayers = function (json) {
   
       li.innerHTML = `
         <div>
-            <span>${json[key].position}</span>
+          <span>${json[key].position}</span>
         </div>
         <div>
-            <span>
-                <div class="topPlayers__team-img"></div>
-                <p class="topPlayers__team-name">${json[key].team.name}</p>
-            </span>
+          <span>
+            <div class="topPlayers__person-img"></div>
+              <div>
+                <p class="topPlayers__person-name">${json[key].player.person.name}</p>
+              <div>
+                <div class="topPlayers__person-team"></div>
+                <div class="topPlayers__person-position">${json[key].player.person.position}</div>
+              </div>
+            </div>
+          </span>
         </div>
         <div>
-            <span>${json[key].percent}</span>
+          <span>${json[key].percent}</span>
         </div>
       `;
-      li.querySelector('.topPlayers__team-img').style.backgroundImage = `url(${json[key].team.imageUrl})`;
+      li.querySelector('.topPlayers__person-img').style.backgroundImage = `url(${json[key].player.team})`;
+      li.querySelector('.topPlayers__person-team').style.backgroundImage = `url(${json[key].player.person.img})`;
 
       body.appendChild(li);
       if (!(Object.keys(json).length == key)) {
@@ -264,4 +383,4 @@ let fillingTopPlayers = function (json) {
 }
 
 fillingStandings(jsonTeams);
-//fillingTopPlayers(jsonTopPlayers);
+fillingTopPlayers(jsonTopPlayers);

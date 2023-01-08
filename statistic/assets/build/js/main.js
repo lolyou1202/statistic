@@ -15,6 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_filling_line__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_filling_line__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_filling_table__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/filling-table */ "./assets/src/js/components/filling-table.js");
 /* harmony import */ var _components_filling_table__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_filling_table__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_matches__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/matches */ "./assets/src/js/components/matches.js");
+/* harmony import */ var _components_matches__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_matches__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -370,9 +373,121 @@ let jsonTeams = {
 let jsonTopPlayers = {
   1: {
     position: '1',
-    team: {
-      imageUrl: '../img/pngegg.png',
-      name: 'Stephen Curry'
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  2: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  3: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  4: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  5: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  6: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  7: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  8: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  9: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    percent: '0.58'
+  },
+  10: {
+    position: '1',
+    player: {
+      team: '../img/pngegg.png',
+      person: {
+        img: '../img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
     },
     percent: '0.58'
   }
@@ -436,19 +551,26 @@ let fillingTopPlayers = function (json) {
     li.classList.add('topPlayers__body-item');
     li.innerHTML = `
         <div>
-            <span>${json[key].position}</span>
+          <span>${json[key].position}</span>
         </div>
         <div>
-            <span>
-                <div class="topPlayers__team-img"></div>
-                <p class="topPlayers__team-name">${json[key].team.name}</p>
-            </span>
+          <span>
+            <div class="topPlayers__person-img"></div>
+              <div>
+                <p class="topPlayers__person-name">${json[key].player.person.name}</p>
+              <div>
+                <div class="topPlayers__person-team"></div>
+                <div class="topPlayers__person-position">${json[key].player.person.position}</div>
+              </div>
+            </div>
+          </span>
         </div>
         <div>
-            <span>${json[key].percent}</span>
+          <span>${json[key].percent}</span>
         </div>
       `;
-    li.querySelector('.topPlayers__team-img').style.backgroundImage = `url(${json[key].team.imageUrl})`;
+    li.querySelector('.topPlayers__person-img').style.backgroundImage = `url(${json[key].player.team})`;
+    li.querySelector('.topPlayers__person-team').style.backgroundImage = `url(${json[key].player.person.img})`;
     body.appendChild(li);
     if (!(Object.keys(json).length == key)) {
       body.appendChild(hr);
@@ -456,7 +578,187 @@ let fillingTopPlayers = function (json) {
   }
 };
 fillingStandings(jsonTeams);
-//fillingTopPlayers(jsonTopPlayers);
+fillingTopPlayers(jsonTopPlayers);
+
+/***/ }),
+
+/***/ "./assets/src/js/components/matches.js":
+/*!*********************************************!*\
+  !*** ./assets/src/js/components/matches.js ***!
+  \*********************************************/
+/***/ (() => {
+
+let json = [{
+  time: '12:00',
+  matches: {
+    1: {
+      comands: {
+        1: {
+          name: 'Golden State Warriors',
+          standings: '2',
+          place: 'Home',
+          img: '../img/pngegg.png'
+        },
+        2: {
+          name: 'Orlando Magick',
+          standings: '10',
+          place: 'Guests',
+          img: '../img/pngegg.png'
+        }
+      }
+    },
+    2: {
+      comands: {
+        1: {
+          name: 'Golden State Warriors',
+          standings: '2',
+          place: 'Home',
+          img: '../img/pngegg.png'
+        },
+        2: {
+          name: 'Orlando Magick',
+          standings: '10',
+          place: 'Guests',
+          img: '../img/pngegg.png'
+        }
+      }
+    }
+  }
+}, {
+  time: '15:00',
+  matches: {
+    1: {
+      comands: {
+        1: {
+          name: 'Golden State Warriors',
+          standings: '2',
+          place: 'Home',
+          img: '../img/pngegg.png'
+        },
+        2: {
+          name: 'Orlando Magick',
+          standings: '10',
+          place: 'Guests',
+          img: '../img/pngegg.png'
+        }
+      }
+    },
+    2: {
+      comands: {
+        1: {
+          name: 'Golden State Warriors',
+          standings: '2',
+          place: 'Home',
+          img: '../img/pngegg.png'
+        },
+        2: {
+          name: 'Orlando Magick',
+          standings: '10',
+          place: 'Guests',
+          img: '../img/pngegg.png'
+        }
+      }
+    }
+  }
+}, {
+  time: '18:00',
+  matches: {
+    1: {
+      comands: {
+        1: {
+          name: 'Golden State Warriors',
+          standings: '2',
+          place: 'Home',
+          img: '../img/pngegg.png'
+        },
+        2: {
+          name: 'Orlando Magick',
+          standings: '10',
+          place: 'Guests',
+          img: '../img/pngegg.png'
+        }
+      }
+    }
+  }
+}];
+let fillMatches = function (json) {
+  let matches = document.querySelector('.matches');
+  let saveHeightcard = 60;
+  let saveHeightTime = 101;
+  let saveHeightLine = 116;
+  matches.innerHTML = '';
+  const width = matches.offsetWidth;
+  const height = matches.offsetHeight;
+  const canvas = document.getElementById('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const context = canvas.getContext('2d');
+  context.beginPath();
+  let midleLine = document.createElement('div');
+  midleLine.classList.add('midleLine');
+  matches.appendChild(midleLine);
+  for (let i = 0; i < json.length; i++) {
+    let midleLineBlock = document.createElement('div');
+    midleLineBlock.classList.add('midleLine__time');
+    let p = document.createElement('p');
+    p.textContent = json[i].time;
+    p.style.top = `${saveHeightTime}px`;
+    let count = Object.keys(json[i].matches).length;
+    saveHeightTime = saveHeightTime + count * (112 + 20);
+    midleLineBlock.appendChild(p);
+    matches.appendChild(midleLineBlock);
+    for (let key in json[i].matches) {
+      let match = document.createElement('div');
+      match.classList.add('midleLine__match');
+      match.innerHTML = `
+                <div class="midleLine__match-command">
+                    <div class="command__img"></div>
+                    <div class="command__info">
+                        <div class="command__info-name">
+                            <p>${json[i].matches[key].comands[1].name}</p>
+                            <span class="command__info-position">#
+                            ${json[i].matches[key].comands[1].standings}
+                            </span>
+                        </div>
+                        <div class="command__info-stadium">
+                        ${json[i].matches[key].comands[1].place}
+                        </div>
+                    </div>
+                </div>
+                <div class="midleLine__match-command">
+                    <div class="command__img"></div>
+                    <div class="command__info">
+                        <div class="command__info-name">
+                            <p>${json[i].matches[key].comands[2].name}</p>
+                            <span class="command__info-position">#
+                            ${json[i].matches[key].comands[2].standings}
+                            </span>
+                        </div>
+                        <div class="command__info-stadium">
+                        ${json[i].matches[key].comands[2].place}
+                        </div>
+                    </div>
+                </div>
+            `;
+      match.style.top = `${saveHeightcard}px`;
+      saveHeightcard = saveHeightcard + 112 + 20;
+      context.moveTo(width / 2 + 30, saveHeightTime);
+      context.bezierCurveTo(width / 2 + width / 2 - 300, 116, width / 2 + 30, 236, width / 2 + width / 2 - 300, 236);
+      if (i % 2 == 1) {
+        match.style.left = '30px';
+      }
+      midleLineBlock.appendChild(match);
+    }
+  }
+  context.moveTo(width / 2 + 30, 116);
+  context.lineTo(width / 2 + width / 2 - 300, 116);
+  context.moveTo(width / 2 + 30, 236);
+  context.lineTo(width / 2 + width / 2 - 300, 236);
+  context.lineWidth = 10;
+  context.strokeStyle = '#DFE7F1';
+  context.stroke();
+};
+fillMatches(json);
 
 /***/ }),
 

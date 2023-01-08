@@ -46,8 +46,8 @@
 .topPlayers__caption {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 26px minmax(100px, 1fr) 98px;
-  grid-template-columns: 26px minmax(100px, 1fr) 98px;
+  -ms-grid-columns: 26px minmax(100px, 1fr) 110px;
+  grid-template-columns: 26px minmax(100px, 1fr) 110px;
   grid-column-gap: 15px;
   margin-bottom: 10px;
   padding-right: 20px;
@@ -81,7 +81,7 @@
   height: 20px;
   padding: 0 5px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 5px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -110,8 +110,8 @@
 .topPlayers__body-item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 26px minmax(100px, 1fr) 98px;
-  grid-template-columns: 26px minmax(100px, 1fr) 98px;
+  -ms-grid-columns: 26px 1fr 50px;
+  grid-template-columns: 26px 1fr 50px;
   grid-column-gap: 15px;
   -ms-grid-row-align: center;
   align-self: center;
@@ -160,22 +160,24 @@
   justify-content: center;
   padding: 0 5px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 100%;
   border-radius: 8px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .topPlayers__body-item span .topPlayers__person-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   background-color: var(--selected);
   background-size: cover;
   margin-right: 8px;
 }
 .topPlayers__body-item span .topPlayers__person-name {
-  font-weight: 700;
+  font-weight: 500;
+  margin-bottom: 2px;
 }
 .topPlayers__body-item span .topPlayers__person-name + div {
   display: -webkit-inline-box;
@@ -186,10 +188,16 @@
   align-items: center;
 }
 .topPlayers__body-item span .topPlayers__person-team {
-  width: 12px;
-  height: 12px;
-  border-radius: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
   background: url(../img/pngegg.png);
   background-size: cover;
+  margin-right: 4px;
+}
+.topPlayers__body-item span .topPlayers__person-position {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
 }
 /*# sourceMappingURL=top-players.css.map */
