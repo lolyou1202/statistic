@@ -70,6 +70,22 @@ let json = [
                         img: '../img/pngegg.png'
                     }
                 }
+            },
+            3: {
+                comands: {
+                    1: {
+                        name: 'Golden State Warriors',
+                        standings: '2',
+                        place: 'Home',
+                        img: '../img/pngegg.png'
+                    },
+                    2: {
+                        name: 'Orlando Magick',
+                        standings: '10',
+                        place: 'Guests',
+                        img: '../img/pngegg.png'
+                    }
+                }
             }
         }
     },
@@ -103,8 +119,9 @@ let fillMatches = function (json) {
     let saveHeightLine = 116;
     matches.innerHTML = '';
 
-    const width = matches.offsetWidth;
-    const height = matches.offsetHeight;
+    let width = matches.offsetWidth;
+    let height = matches.offsetHeight;
+    
     const canvas = document.getElementById('canvas');
     canvas.width = width;
     canvas.height = height;
@@ -122,8 +139,6 @@ let fillMatches = function (json) {
         let p = document.createElement('p');
         p.textContent = json[i].time;
         p.style.top = `${saveHeightTime}px`;
-        let count = Object.keys(json[i].matches).length;
-        saveHeightTime = saveHeightTime + count * (112 + 20);
         
         midleLineBlock.appendChild(p);
         matches.appendChild(midleLineBlock);
@@ -131,7 +146,6 @@ let fillMatches = function (json) {
         for (let key in json[i].matches) {
             let match = document.createElement('div');
             match.classList.add('midleLine__match');
-
             match.innerHTML = `
                 <div class="midleLine__match-command">
                     <div class="command__img"></div>
@@ -162,39 +176,56 @@ let fillMatches = function (json) {
                     </div>
                 </div>
             `;
-
             match.style.top = `${saveHeightcard}px`;
-            saveHeightcard = saveHeightcard + 112 + 20;
-
-            context.moveTo(width / 2 + 30, saveHeightTime);
-    
-            context.bezierCurveTo(((width/2)+(width/2)-300), 116, ((width / 2) + 30), 236, ((width/2)+(width/2)-300), 236);
             
             if (i % 2 == 1) {
                 match.style.left = '30px';
+                let blockX = ((width / 2) - (width / 2) + 300);
+                let timeX = (width / 2);
+                let centerX = timeX - (timeX - blockX + 35) / 2;
+                let radius = (timeX - blockX) / 4;
+                if (key == 1) {
+                    context.moveTo(timeX, saveHeightLine);
+                    context.lineTo(blockX, saveHeightLine);
+                } else {
+                    context.moveTo(timeX, saveHeightTime + 15);
+                    context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
+                    context.lineTo(centerX, saveHeightLine - radius);
+                    context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
+                    context.lineTo(blockX, saveHeightLine);
+                }
+            } else {
+                let blockX = ((width / 2) + (width / 2) - 300);
+                let timeX = (width / 2);
+                let centerX = timeX + (blockX - timeX) / 2;
+                let radius = (blockX - timeX) / 4;
+                if (key == 1) {
+                    context.moveTo(timeX, saveHeightLine);
+                    context.lineTo(blockX, saveHeightLine);
+                } else {
+                    context.moveTo(timeX, saveHeightTime + 15);
+                    context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
+                    context.lineTo(centerX, saveHeightLine - radius);
+                    context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
+                    context.lineTo(blockX, saveHeightLine);
+                }
             }
 
-            
-
+            saveHeightcard = saveHeightcard + 112 + 20;
+            saveHeightLine = saveHeightLine + 112 + 20;
             midleLineBlock.appendChild(match);
         }
+        let count = Object.keys(json[i].matches).length;
+        saveHeightTime = saveHeightTime + count * (112 + 20);
     }
     
-    
-
-    
-
-
-    
-    context.moveTo(width / 2 + 30, 116);
-    context.lineTo(((width/2)+(width/2)-300), 116);
-
-    context.moveTo(((width / 2) + 30), 236);
-    context.lineTo(((width/2)+(width/2)-300), 236);
-
     context.lineWidth = 10;
     context.strokeStyle = '#DFE7F1';
     context.stroke();
 }
-
 fillMatches(json);
+window.addEventListener('resize', function(event) {
+    fillMatches(json);
+});
+
+

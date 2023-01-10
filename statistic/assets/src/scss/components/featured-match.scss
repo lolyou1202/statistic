@@ -1,0 +1,74 @@
+.featuredMatch {
+    padding: 15px 20px;
+    & > p {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    &__main {
+        & > div {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            & + div {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                margin: 0 13px;
+                .bet {
+                    width: 60px;
+                    height: 24px;
+                    background: var(--primary-second-hover);
+                    border-radius: 10px;
+                    margin-top: 10px;
+                }
+            }
+        }
+        &-comand {
+            width: 86px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            .comand-img {
+                width: 70px;
+                height: 70px;
+                background: var(--primary-second-hover);
+                border-radius: 50%;
+            }
+            .comand-name {
+                font-weight: 700;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+        }
+        &-time {
+            width: 100px;
+            margin-top: 11px;
+            text-align: center;
+            p {
+                font-weight: 700;
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+            span {
+                display: block;
+                font-weight: 400;
+                font-size: 12px;
+            }
+        }
+        &-timer {
+            text-align: center;
+            span {
+                display: block;
+                font-weight: 700;
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+            p {
+                font-weight: 700;
+                font-size: 14px;
+            }
+        }
+    }
+}

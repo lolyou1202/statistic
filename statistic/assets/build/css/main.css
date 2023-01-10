@@ -969,4 +969,231 @@ canvas {
 .midleLine__match-command:not(:last-child) {
   margin-bottom: 10px;
 }
+
+.featuredMatch {
+  padding: 15px 20px;
+}
+.featuredMatch > p {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.featuredMatch__main > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.featuredMatch__main > div + div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 13px;
+}
+.featuredMatch__main > div + div .bet {
+  width: 60px;
+  height: 24px;
+  background: var(--primary-second-hover);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.featuredMatch__main-comand {
+  width: 86px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+.featuredMatch__main-comand .comand-img {
+  width: 70px;
+  height: 70px;
+  background: var(--primary-second-hover);
+  border-radius: 50%;
+}
+.featuredMatch__main-comand .comand-name {
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.featuredMatch__main-time {
+  width: 100px;
+  margin-top: 11px;
+  text-align: center;
+}
+.featuredMatch__main-time p {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.featuredMatch__main-time span {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+}
+.featuredMatch__main-timer {
+  text-align: center;
+}
+.featuredMatch__main-timer span {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.featuredMatch__main-timer p {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.calendar {
+  padding: 15px 20px 20px;
+}
+.calendar > p {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.calendar__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.calendar__header-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.calendar__header-arrow.arrow-left {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.calendar__header-arrow.arrow-right {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.calendar__header-arrow:hover {
+  background: var(--primary);
+}
+.calendar__header p {
+  font-weight: 700;
+  font-size: 16px;
+}
+.calendar__main-cap hr {
+  height: 1px;
+  border: 0;
+  background: var(--primary);
+}
+.calendar__main-cap .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.calendar__main-cap .days span {
+  width: 34px;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.calendar__main-rows .calendar-row {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.calendar__main-rows .calendar-row span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.calendar__main-rows .calendar-row span.today {
+  background: var(--primary);
+}
+.calendar__main-rows .calendar-row span.today:hover {
+  cursor: default;
+  background: var(--primary);
+}
+.calendar__main-rows .calendar-row span.active {
+  background: var(--primary-second-hover);
+}
+.calendar__main-rows .calendar-row span.active:hover {
+  cursor: default;
+}
+.calendar__main-rows .calendar-row span.notCurrentMonth {
+  color: var(--primary-second-hover);
+}
+.calendar__main-rows .calendar-row span.notCurrentMonth:hover {
+  cursor: default;
+  background: none;
+}
+.calendar__main-rows .calendar-row span:hover {
+  cursor: pointer;
+  background: var(--primary-second-hover);
+}
 /*# sourceMappingURL=main.css.map */

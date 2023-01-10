@@ -17,6 +17,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_filling_table__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_filling_table__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_matches__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/matches */ "./assets/src/js/components/matches.js");
 /* harmony import */ var _components_matches__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_matches__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/calendar */ "./assets/src/js/components/calendar.js");
+/* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_calendar__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -146,6 +149,56 @@ __webpack_require__.r(__webpack_exports__);
   htmlEl: document.documentElement,
   bodyEl: document.body
 });
+
+/***/ }),
+
+/***/ "./assets/src/js/components/calendar.js":
+/*!**********************************************!*\
+  !*** ./assets/src/js/components/calendar.js ***!
+  \**********************************************/
+/***/ (() => {
+
+let rowsContainer = document.querySelector('.calendar__main-rows');
+let month = document.querySelector('.calendar__header');
+let currentYear = new Date().getFullYear();
+let currentMonth = new Date().getMonth();
+let currentDate = new Date().getDate();
+let currentDay = new Date().getDay();
+let daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+let date = new Date(currentYear, currentMonth, 0);
+let firstNumb = date.getDay() + 6;
+if (firstNumb > 6) {
+  firstNumb = firstNumb - 7;
+}
+let weekNumb = 5;
+if (firstNumb <= 5) {
+  weekNumb = 6;
+}
+if (daysInMonth == 28 && firstNumb == 0) {
+  weekNumb = 4;
+}
+let continueNumb = 6 - firstNumb + 1;
+for (let i = 1; i < weekNumb; i++) {
+  let row = document.createElement('div');
+  row.classList.add('calendar-row');
+  for (let j = 0; j < 7; j++) {
+    let day = document.createElement('span');
+    row.appendChild(day);
+    if (continueNumb <= daysInMonth) {
+      day.textContent = continueNumb;
+      continueNumb++;
+    } else {
+      continueNumb = 1;
+      day.textContent = continueNumb;
+      continueNumb++;
+    }
+  }
+  console.log(row);
+}
+
+//найти первое число на первой строчке
+//заполнить все остальные строчки числами, которые нам известны
+//приступить к заполнению первой строки
 
 /***/ }),
 
@@ -658,6 +711,22 @@ let json = [{
           img: '../img/pngegg.png'
         }
       }
+    },
+    3: {
+      comands: {
+        1: {
+          name: 'Golden State Warriors',
+          standings: '2',
+          place: 'Home',
+          img: '../img/pngegg.png'
+        },
+        2: {
+          name: 'Orlando Magick',
+          standings: '10',
+          place: 'Guests',
+          img: '../img/pngegg.png'
+        }
+      }
     }
   }
 }, {
@@ -687,8 +756,8 @@ let fillMatches = function (json) {
   let saveHeightTime = 101;
   let saveHeightLine = 116;
   matches.innerHTML = '';
-  const width = matches.offsetWidth;
-  const height = matches.offsetHeight;
+  let width = matches.offsetWidth;
+  let height = matches.offsetHeight;
   const canvas = document.getElementById('canvas');
   canvas.width = width;
   canvas.height = height;
@@ -703,8 +772,6 @@ let fillMatches = function (json) {
     let p = document.createElement('p');
     p.textContent = json[i].time;
     p.style.top = `${saveHeightTime}px`;
-    let count = Object.keys(json[i].matches).length;
-    saveHeightTime = saveHeightTime + count * (112 + 20);
     midleLineBlock.appendChild(p);
     matches.appendChild(midleLineBlock);
     for (let key in json[i].matches) {
@@ -741,24 +808,53 @@ let fillMatches = function (json) {
                 </div>
             `;
       match.style.top = `${saveHeightcard}px`;
-      saveHeightcard = saveHeightcard + 112 + 20;
-      context.moveTo(width / 2 + 30, saveHeightTime);
-      context.bezierCurveTo(width / 2 + width / 2 - 300, 116, width / 2 + 30, 236, width / 2 + width / 2 - 300, 236);
       if (i % 2 == 1) {
         match.style.left = '30px';
+        let blockX = width / 2 - width / 2 + 300;
+        let timeX = width / 2;
+        let centerX = timeX - (timeX - blockX + 35) / 2;
+        let radius = (timeX - blockX) / 4;
+        if (key == 1) {
+          context.moveTo(timeX, saveHeightLine);
+          context.lineTo(blockX, saveHeightLine);
+        } else {
+          context.moveTo(timeX, saveHeightTime + 15);
+          context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
+          context.lineTo(centerX, saveHeightLine - radius);
+          context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
+          context.lineTo(blockX, saveHeightLine);
+        }
+      } else {
+        let blockX = width / 2 + width / 2 - 300;
+        let timeX = width / 2;
+        let centerX = timeX + (blockX - timeX) / 2;
+        let radius = (blockX - timeX) / 4;
+        if (key == 1) {
+          context.moveTo(timeX, saveHeightLine);
+          context.lineTo(blockX, saveHeightLine);
+        } else {
+          context.moveTo(timeX, saveHeightTime + 15);
+          context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
+          context.lineTo(centerX, saveHeightLine - radius);
+          context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
+          context.lineTo(blockX, saveHeightLine);
+        }
       }
+      saveHeightcard = saveHeightcard + 112 + 20;
+      saveHeightLine = saveHeightLine + 112 + 20;
       midleLineBlock.appendChild(match);
     }
+    let count = Object.keys(json[i].matches).length;
+    saveHeightTime = saveHeightTime + count * (112 + 20);
   }
-  context.moveTo(width / 2 + 30, 116);
-  context.lineTo(width / 2 + width / 2 - 300, 116);
-  context.moveTo(width / 2 + 30, 236);
-  context.lineTo(width / 2 + width / 2 - 300, 236);
   context.lineWidth = 10;
   context.strokeStyle = '#DFE7F1';
   context.stroke();
 };
 fillMatches(json);
+window.addEventListener('resize', function (event) {
+  fillMatches(json);
+});
 
 /***/ }),
 
