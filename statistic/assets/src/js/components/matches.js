@@ -188,6 +188,9 @@ let fillMatches = function (json) {
                     context.moveTo(timeX, saveHeightLine);
                     context.lineTo(blockX, saveHeightLine);
                 } else {
+                    if (radius > 50) {
+                        radius = 50;
+                    }
                     context.moveTo(timeX, saveHeightTime + 15);
                     context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
                     context.lineTo(centerX, saveHeightLine - radius);
@@ -203,6 +206,9 @@ let fillMatches = function (json) {
                     context.moveTo(timeX, saveHeightLine);
                     context.lineTo(blockX, saveHeightLine);
                 } else {
+                    if (radius > 50) {
+                        radius = 50;
+                    }
                     context.moveTo(timeX, saveHeightTime + 15);
                     context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
                     context.lineTo(centerX, saveHeightLine - radius);
@@ -223,7 +229,9 @@ let fillMatches = function (json) {
     context.strokeStyle = '#DFE7F1';
     context.stroke();
 }
+
 fillMatches(json);
+
 window.addEventListener('resize', function(event) {
     fillMatches(json);
 });

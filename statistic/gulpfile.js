@@ -1,4 +1,5 @@
 const {
+  gulp,
   src,
   dest,
   series,
@@ -28,17 +29,18 @@ const exec = require('child_process').exec
 // paths
 const srcFolder = './assets/src';
 const buildFolder = './assets/build';
+const buildFolderStatic = './assets/build/static';
 const paths = {
   srcSvg: `${srcFolder}/img/svg/**.svg`,
   srcImgFolder: `${srcFolder}/img`,
-  buildImgFolder: `${buildFolder}/img`,
+  buildImgFolder: `${buildFolderStatic}/img`,
   srcScss: `${srcFolder}/scss/**/*.scss`,
-  buildCssFolder: `${buildFolder}/css`,
+  buildCssFolder: `${buildFolderStatic}/css`,
   srcFullJs: `${srcFolder}/js/**/*.js`,
   srcMainJs: `${srcFolder}/js/main.js`,
-  buildJsFolder: `${buildFolder}/js`,
+  buildJsFolder: `${buildFolderStatic}/js`,
   srcPartialsFolder: `${srcFolder}/partials`,
-  resourcesFolder: `${srcFolder}/fonts`,
+  resourcesFolder: `${srcFolder}/resources`,
 };
 
 let isProd = false; // dev by default
@@ -144,7 +146,7 @@ const scripts = () => {
 
 const resources = () => {
   return src(`${paths.resourcesFolder}/**`)
-    .pipe(dest(buildFolder))
+    .pipe(dest(buildFolderStatic))
 }
 
 const images = () => {
@@ -174,20 +176,8 @@ const htmlInclude = () => {
     .pipe(browserSync.stream());
 }
 
-const webserver = () => {
-  browserSync.init(
-    {
-      server: {
-        baseDir: './assets/build'
-      },
-      notify: false,
-      port: "5000"
-    }
-  )
-};
-
 const runServer = () => {
-  var proc = exec('venv\\Scripts\\activate.bat && set PYTHONUNBUFFERED=1 && '+ 'python backend/main.py runserver', webserver)
+  var proc = exec('venv\\Scripts\\activate.bat && '+ 'python backend/main.py runserver')
   proc.stderr.on('data', function(data) {
     process.stdout.write(data);
   });
@@ -198,8 +188,12 @@ const runServer = () => {
 };
 
 const watchFiles = () => {
-  webserver();
   runServer();
+  browserSync.init({
+      proxy: "127.0.0.1:5000",
+      port: "5000",
+      notify: false
+  })
 
   watch(paths.srcScss, styles);
   watch(paths.srcFullJs, scripts);

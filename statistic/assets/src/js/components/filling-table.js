@@ -2,7 +2,7 @@ let jsonTeams = {
   1: {
     position: '1',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'Boston',
     },
     wins: '33',
@@ -13,7 +13,7 @@ let jsonTeams = {
   2: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -24,7 +24,7 @@ let jsonTeams = {
   3: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -35,7 +35,7 @@ let jsonTeams = {
   4: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -46,7 +46,7 @@ let jsonTeams = {
   5: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -57,7 +57,7 @@ let jsonTeams = {
   6: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -68,7 +68,7 @@ let jsonTeams = {
   7: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -79,7 +79,7 @@ let jsonTeams = {
   8: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -90,7 +90,7 @@ let jsonTeams = {
   9: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -101,7 +101,7 @@ let jsonTeams = {
   10: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -112,7 +112,7 @@ let jsonTeams = {
   11: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -123,7 +123,7 @@ let jsonTeams = {
   12: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -134,7 +134,7 @@ let jsonTeams = {
   13: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -145,7 +145,7 @@ let jsonTeams = {
   14: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -156,7 +156,7 @@ let jsonTeams = {
   15: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW',
     },
     wins: '11',
@@ -170,9 +170,9 @@ let jsonTopPlayers = {
     1: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -182,9 +182,9 @@ let jsonTopPlayers = {
     2: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -194,9 +194,9 @@ let jsonTopPlayers = {
     3: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -206,9 +206,9 @@ let jsonTopPlayers = {
     4: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -218,9 +218,9 @@ let jsonTopPlayers = {
     5: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -230,9 +230,9 @@ let jsonTopPlayers = {
     6: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -242,9 +242,9 @@ let jsonTopPlayers = {
     7: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -254,9 +254,9 @@ let jsonTopPlayers = {
     8: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -266,9 +266,9 @@ let jsonTopPlayers = {
     9: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }
@@ -278,9 +278,9 @@ let jsonTopPlayers = {
     10: {
       position: '1',
       player: {
-        team: '../img/pngegg.png',
+        team: 'static/img/pngegg.png',
         person: {
-          img: '../img/pngegg.png',
+          img: 'static/img/pngegg.png',
           name: 'Stephen Curry',
           position: 'Guard'
         }

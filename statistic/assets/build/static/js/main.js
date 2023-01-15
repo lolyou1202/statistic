@@ -158,47 +158,105 @@ __webpack_require__.r(__webpack_exports__);
   \**********************************************/
 /***/ (() => {
 
-let rowsContainer = document.querySelector('.calendar__main-rows');
-let month = document.querySelector('.calendar__header');
-let currentYear = new Date().getFullYear();
-let currentMonth = new Date().getMonth();
-let currentDate = new Date().getDate();
-let currentDay = new Date().getDay();
-let daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-let date = new Date(currentYear, currentMonth, 0);
-let firstNumb = date.getDay() + 6;
-if (firstNumb > 6) {
-  firstNumb = firstNumb - 7;
-}
-let weekNumb = 5;
-if (firstNumb <= 5) {
-  weekNumb = 6;
-}
-if (daysInMonth == 28 && firstNumb == 0) {
-  weekNumb = 4;
-}
-let continueNumb = 6 - firstNumb + 1;
-for (let i = 1; i < weekNumb; i++) {
-  let row = document.createElement('div');
-  row.classList.add('calendar-row');
-  for (let j = 0; j < 7; j++) {
-    let day = document.createElement('span');
-    row.appendChild(day);
-    if (continueNumb <= daysInMonth) {
-      day.textContent = continueNumb;
-      continueNumb++;
-    } else {
-      continueNumb = 1;
-      day.textContent = continueNumb;
-      continueNumb++;
+let calendar = function () {
+  let rowsContainer = document.querySelector('.calendar__main-rows');
+  let month = document.querySelector('.calendar__header p');
+  let currentYear = new Date().getFullYear();
+  let currentMonth = new Date().getMonth();
+  let currentDate = new Date().getDate();
+  let currentDay = new Date().getDay();
+  rowsContainer.innerHTML = '';
+  let fillRows = function (date, currentDate, countDaysInMonth, countDaysInPreviousMonth) {
+    let firstDayInMonth = date.getDay() + 6;
+    if (firstDayInMonth > 6) {
+      firstDayInMonth = firstDayInMonth - 7;
     }
-  }
-  console.log(row);
-}
-
-//найти первое число на первой строчке
-//заполнить все остальные строчки числами, которые нам известны
-//приступить к заполнению первой строки
+    let weekNumb = 6;
+    let continueNumb = 7 - firstDayInMonth + 1;
+    let b = 1;
+    let c = 1;
+    let a = 1;
+    for (let i = 0; i < weekNumb; i++) {
+      let row = document.createElement('div');
+      row.classList.add('calendar-row');
+      rowsContainer.appendChild(row);
+      for (let j = 0; j < 7; j++) {
+        let day = document.createElement('span');
+        row.appendChild(day);
+        if (i == 0) {
+          if (j < firstDayInMonth) {
+            day.textContent = countDaysInPreviousMonth - firstDayInMonth + b;
+            day.classList.add('notCurrentMonth');
+            b++;
+          }
+          if (j >= firstDayInMonth) {
+            day.textContent = c;
+            if (c == currentDate) {
+              day.classList.add('today');
+            }
+            c++;
+          }
+        }
+        if (i > 0) {
+          if (continueNumb > countDaysInMonth) {
+            day.textContent = a;
+            day.classList.add('notCurrentMonth');
+            a++;
+          }
+          if (continueNumb <= countDaysInMonth) {
+            day.textContent = continueNumb;
+            if (continueNumb == currentDate && date.getMonth() == currentMonth && date.getFullYear() == currentYear) {
+              day.classList.add('today');
+            }
+            continueNumb++;
+          }
+        }
+      }
+    }
+  };
+  let arrowClick = function (currentYear, currentMonth, currentDate, currentDay) {
+    document.querySelectorAll('.calendar__header-arrow').forEach(function (element) {
+      element.addEventListener('click', function (e) {
+        if (element.classList.contains('arrow-left')) {
+          rowsContainer.innerHTML = '';
+          currentMonth = currentMonth - 1;
+          load(currentYear, currentMonth, currentDate, currentDay);
+        }
+        if (element.classList.contains('arrow-right')) {
+          rowsContainer.innerHTML = '';
+          currentMonth = currentMonth + 1;
+          load(currentYear, currentMonth, currentDate, currentDay);
+        }
+      });
+    });
+  };
+  let load = function (currentYear, currentMonth, currentDate, currentDay) {
+    let countDaysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    let countDaysInPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
+    let date = new Date(currentYear, currentMonth, 1);
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    month.textContent = monthNames[date.getMonth()];
+    fillRows(date, currentDate, countDaysInMonth, countDaysInPreviousMonth);
+    document.querySelectorAll('.calendar-row span').forEach(el => {
+      if (el.classList == '') {
+        el.addEventListener('click', function () {
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+          } else {
+            document.querySelectorAll('.calendar-row span').forEach(el => {
+              el.classList.remove('active');
+            });
+            this.classList.toggle('active');
+          }
+          console.log(date = new Date(currentYear, currentMonth, this.textContent));
+        });
+      }
+    });
+  };
+  load(currentYear, currentMonth, currentDate, currentDay);
+  arrowClick(currentYear, currentMonth, currentDate, currentDay);
+};
+calendar();
 
 /***/ }),
 
@@ -260,7 +318,7 @@ let jsonTeams = {
   1: {
     position: '1',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'Boston'
     },
     wins: '33',
@@ -271,7 +329,7 @@ let jsonTeams = {
   2: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -282,7 +340,7 @@ let jsonTeams = {
   3: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -293,7 +351,7 @@ let jsonTeams = {
   4: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -304,7 +362,7 @@ let jsonTeams = {
   5: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -315,7 +373,7 @@ let jsonTeams = {
   6: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -326,7 +384,7 @@ let jsonTeams = {
   7: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -337,7 +395,7 @@ let jsonTeams = {
   8: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -348,7 +406,7 @@ let jsonTeams = {
   9: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -359,7 +417,7 @@ let jsonTeams = {
   10: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -370,7 +428,7 @@ let jsonTeams = {
   11: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -381,7 +439,7 @@ let jsonTeams = {
   12: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -392,7 +450,7 @@ let jsonTeams = {
   13: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -403,7 +461,7 @@ let jsonTeams = {
   14: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -414,7 +472,7 @@ let jsonTeams = {
   15: {
     position: '2',
     team: {
-      imageUrl: '../img/pngegg.png',
+      imageUrl: 'static/img/pngegg.png',
       name: 'GSW'
     },
     wins: '11',
@@ -427,9 +485,9 @@ let jsonTopPlayers = {
   1: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -439,9 +497,9 @@ let jsonTopPlayers = {
   2: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -451,9 +509,9 @@ let jsonTopPlayers = {
   3: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -463,9 +521,9 @@ let jsonTopPlayers = {
   4: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -475,9 +533,9 @@ let jsonTopPlayers = {
   5: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -487,9 +545,9 @@ let jsonTopPlayers = {
   6: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -499,9 +557,9 @@ let jsonTopPlayers = {
   7: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -511,9 +569,9 @@ let jsonTopPlayers = {
   8: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -523,9 +581,9 @@ let jsonTopPlayers = {
   9: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -535,9 +593,9 @@ let jsonTopPlayers = {
   10: {
     position: '1',
     player: {
-      team: '../img/pngegg.png',
+      team: 'static/img/pngegg.png',
       person: {
-        img: '../img/pngegg.png',
+        img: 'static/img/pngegg.png',
         name: 'Stephen Curry',
         position: 'Guard'
       }
@@ -818,6 +876,9 @@ let fillMatches = function (json) {
           context.moveTo(timeX, saveHeightLine);
           context.lineTo(blockX, saveHeightLine);
         } else {
+          if (radius > 50) {
+            radius = 50;
+          }
           context.moveTo(timeX, saveHeightTime + 15);
           context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
           context.lineTo(centerX, saveHeightLine - radius);
@@ -833,6 +894,9 @@ let fillMatches = function (json) {
           context.moveTo(timeX, saveHeightLine);
           context.lineTo(blockX, saveHeightLine);
         } else {
+          if (radius > 50) {
+            radius = 50;
+          }
           context.moveTo(timeX, saveHeightTime + 15);
           context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
           context.lineTo(centerX, saveHeightLine - radius);

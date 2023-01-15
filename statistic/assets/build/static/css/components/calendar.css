@@ -78,7 +78,7 @@
   text-transform: uppercase;
 }
 .calendar__main-rows .calendar-row {
-  padding-top: 10px;
+  padding-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,9 +117,6 @@
 }
 .calendar__main-rows .calendar-row span.active {
   background: var(--primary-second-hover);
-}
-.calendar__main-rows .calendar-row span.active:hover {
-  cursor: default;
 }
 .calendar__main-rows .calendar-row span.notCurrentMonth {
   color: var(--primary-second-hover);

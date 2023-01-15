@@ -57,7 +57,7 @@
         }
         &-rows {
             .calendar-row {
-                padding-top: 10px;
+                padding-top: 5px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -80,9 +80,6 @@
                     }
                     &.active {
                         background: var(--primary-second-hover);
-                        &:hover {
-                            cursor: default;
-                        }
                     }
                     &.notCurrentMonth {
                         color: var(--primary-second-hover);
