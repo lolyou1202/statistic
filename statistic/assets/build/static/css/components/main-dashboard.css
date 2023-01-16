@@ -9,13 +9,14 @@
   grid-column-gap: 20px;
 }
 
-.left > div, .right > div {
+.left > div, .right > div, .middle > div {
   background: var(--primary-second);
   border-radius: 16px;
 }
 
 .middle {
   position: relative;
+  overflow: hidden;
 }
 
 .left {

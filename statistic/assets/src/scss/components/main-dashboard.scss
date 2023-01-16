@@ -7,7 +7,7 @@
     grid-column-gap: 20px;
 }
 
-.left, .right {
+.left, .right, .middle {
     & > div {
         background: var(--primary-second);
         border-radius: 16px;
@@ -15,6 +15,7 @@
 }
 .middle {
     position: relative;
+    overflow: hidden;
 }
 .left {
     display: grid;

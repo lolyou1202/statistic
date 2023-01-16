@@ -32,7 +32,7 @@
 .featuredMatch__main > div + div .bet {
   width: 60px;
   height: 24px;
-  background: var(--primary-second-hover);
+  background: var(--primary);
   border-radius: 10px;
   margin-top: 10px;
 }
@@ -53,7 +53,7 @@
 .featuredMatch__main-comand .comand-img {
   width: 70px;
   height: 70px;
-  background: var(--primary-second-hover);
+  background: var(--primary);
   border-radius: 50%;
 }
 .featuredMatch__main-comand .comand-name {
