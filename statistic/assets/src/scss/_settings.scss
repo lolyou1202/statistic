@@ -110,11 +110,16 @@ a {
     font-size: 10px;
     line-height: 11px;
     color: var(--primary-font);
-    transition: all .4s ease-in-out;
+    transition: all .2s ease-in-out;
   }
   &.active {
+    button {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
     ul {
-      max-height: 100vh;
+      max-height: 150px;
     }
   }
   li {

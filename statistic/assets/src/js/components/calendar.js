@@ -105,4 +105,5 @@ let calendar = function () {
     load(currentYear, currentMonth, currentDate, currentDay);
     arrowClick(currentYear, currentMonth, currentDate, currentDay);
 }
-calendar();
+
+export {calendar}

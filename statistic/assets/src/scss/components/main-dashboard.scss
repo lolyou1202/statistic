@@ -7,7 +7,7 @@
     grid-column-gap: 20px;
 }
 
-.left, .right, .middle {
+.left, .right {
     & > div {
         background: var(--primary-second);
         border-radius: 16px;
@@ -15,7 +15,21 @@
 }
 .middle {
     position: relative;
-    overflow: hidden;
+    overflow: auto;
+    background: var(--primary-second);
+    border-radius: 16px;
+    &::-webkit-scrollbar {
+        width: 18px;
+    }
+    &::-webkit-scrollbar-track {
+        background: var(--primary-second);
+        border-radius: 40px;
+      }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(67, 78, 97, .3);
+        border: 6px solid var(--primary-second);
+        border-radius: 40px;
+    }
 }
 .left {
     display: grid;

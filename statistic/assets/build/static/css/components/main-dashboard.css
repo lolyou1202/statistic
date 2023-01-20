@@ -9,14 +9,28 @@
   grid-column-gap: 20px;
 }
 
-.left > div, .right > div, .middle > div {
+.left > div, .right > div {
   background: var(--primary-second);
   border-radius: 16px;
 }
 
 .middle {
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  background: var(--primary-second);
+  border-radius: 16px;
+}
+.middle::-webkit-scrollbar {
+  width: 18px;
+}
+.middle::-webkit-scrollbar-track {
+  background: var(--primary-second);
+  border-radius: 40px;
+}
+.middle::-webkit-scrollbar-thumb {
+  background-color: rgba(67, 78, 97, 0.3);
+  border: 6px solid var(--primary-second);
+  border-radius: 40px;
 }
 
 .left {

@@ -11,14 +11,12 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/select */ "./assets/src/js/components/select.js");
 /* harmony import */ var _components_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_select__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_filling_line__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/filling-line */ "./assets/src/js/components/filling-line.js");
-/* harmony import */ var _components_filling_line__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_filling_line__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_league__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/league */ "./assets/src/js/components/league.js");
 /* harmony import */ var _components_filling_table__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/filling-table */ "./assets/src/js/components/filling-table.js");
-/* harmony import */ var _components_filling_table__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_filling_table__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_matches__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/matches */ "./assets/src/js/components/matches.js");
-/* harmony import */ var _components_matches__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_matches__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/calendar */ "./assets/src/js/components/calendar.js");
-/* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_calendar__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_calling_functions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/calling-functions */ "./assets/src/js/components/calling-functions.js");
+
 
 
 
@@ -156,8 +154,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************!*\
   !*** ./assets/src/js/components/calendar.js ***!
   \**********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "calendar": () => (/* binding */ calendar)
+/* harmony export */ });
 let calendar = function () {
   let rowsContainer = document.querySelector('.calendar__main-rows');
   let month = document.querySelector('.calendar__header p');
@@ -256,16 +259,789 @@ let calendar = function () {
   load(currentYear, currentMonth, currentDate, currentDay);
   arrowClick(currentYear, currentMonth, currentDate, currentDay);
 };
-calendar();
+
 
 /***/ }),
 
-/***/ "./assets/src/js/components/filling-line.js":
-/*!**************************************************!*\
-  !*** ./assets/src/js/components/filling-line.js ***!
-  \**************************************************/
-/***/ (() => {
+/***/ "./assets/src/js/components/calling-functions.js":
+/*!*******************************************************!*\
+  !*** ./assets/src/js/components/calling-functions.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _filling_table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filling-table */ "./assets/src/js/components/filling-table.js");
+/* harmony import */ var _matches__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./matches */ "./assets/src/js/components/matches.js");
+/* harmony import */ var _league__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./league */ "./assets/src/js/components/league.js");
+/* harmony import */ var _calendar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./calendar */ "./assets/src/js/components/calendar.js");
+
+
+
+
+
+//json при загрузке страницы
+let mainJson = {
+  league: [{
+    name: 'NBA',
+    img: 'static/img/pngegg.png',
+    season: {
+      start: '19 Oct',
+      end: '14 Jun',
+      today: '18 Jan'
+    },
+    country: {
+      name: 'USA',
+      img: 'static/img/pngegg.png'
+    }
+  }, {
+    name: 'Euroleague',
+    img: 'static/img/pngegg.png',
+    season: {
+      start: '2 Oct',
+      end: '1 Jul',
+      today: '18 Jan'
+    },
+    country: {
+      name: 'Europe',
+      img: 'static/img/pngegg.png'
+    }
+  }, {
+    name: 'VTB League',
+    img: 'static/img/pngegg.png',
+    season: {
+      start: '2 Oct',
+      end: '1 Jul',
+      today: '18 Jan'
+    },
+    country: {
+      name: 'Russia',
+      img: 'static/img/pngegg.png'
+    }
+  }],
+  standings: {
+    east: [{
+      position: '1',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Boston'
+      },
+      wins: '33',
+      loses: '23',
+      lastFive: 'WWWLL',
+      percent: '0.58'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Golden State'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLLLL',
+      percent: '0.11'
+    }, {
+      position: '3',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '4',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '5',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '6',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '7',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '8',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '9',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '10',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '11',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '12',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '13',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '14',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '15',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }],
+    west: [{
+      position: '1',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Milwaukee'
+      },
+      wins: '33',
+      loses: '23',
+      lastFive: 'WWWLL',
+      percent: '0.58'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Milwaukee'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '3',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }]
+  },
+  topPlayers: [{
+    position: '1',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '2',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '3',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '4',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '5',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '6',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '7',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '8',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '9',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '10',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }],
+  matches: [{
+    time: '12:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '15:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      3: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '16:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      3: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '18:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }]
+};
+let fillingAll = function (mainJson) {
+  //fillingLeague();
+  (0,_filling_table__WEBPACK_IMPORTED_MODULE_0__.standings)(mainJson.standings, 'east');
+  (0,_filling_table__WEBPACK_IMPORTED_MODULE_0__.fillingTopPlayers)(mainJson.topPlayers);
+  (0,_matches__WEBPACK_IMPORTED_MODULE_1__.fillMatches)(mainJson.matches);
+  (0,_calendar__WEBPACK_IMPORTED_MODULE_3__.calendar)();
+};
+fillingAll(mainJson);
+window.addEventListener('resize', () => {
+  (0,_matches__WEBPACK_IMPORTED_MODULE_1__.fillMatches)(mainJson.matches);
+});
+(0,_league__WEBPACK_IMPORTED_MODULE_2__.fillingline)(30, '19 Oct', '1 Jan', '14 Jun');
+
+/***/ }),
+
+/***/ "./assets/src/js/components/filling-table.js":
+/*!***************************************************!*\
+  !*** ./assets/src/js/components/filling-table.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fillingTopPlayers": () => (/* binding */ fillingTopPlayers),
+/* harmony export */   "standings": () => (/* binding */ standings)
+/* harmony export */ });
+let standings = function (json) {
+  //Функция заполнения таблицы
+  let fillingStandings = function (json, conference) {
+    let body = document.querySelector('.standings__body');
+    body.innerHTML = '';
+    for (let key in json[conference]) {
+      let li = document.createElement('li');
+      li.classList.add('standings__body-item');
+      li.innerHTML = `
+        <div>
+            <span>${json[conference][key].position}</span>
+        </div>
+        <div>
+            <span>
+                <div class="standings__team-img"></div>
+                <p class="standings__team-name">${json[conference][key].team.name}</p>
+            </span>
+        </div>
+        <div>
+            <span>${json[conference][key].wins}</span>
+        </div>
+        <div>
+            <span>${json[conference][key].loses}</span>
+        </div>
+        <div>
+            <span>
+                <div class="standings__last-five">${json[conference][key].lastFive[0]}</div>
+                <div class="standings__last-five">${json[conference][key].lastFive[1]}</div>
+                <div class="standings__last-five">${json[conference][key].lastFive[2]}</div>
+                <div class="standings__last-five">${json[conference][key].lastFive[3]}</div>
+                <div class="standings__last-five">${json[conference][key].lastFive[4]}</div>
+            </span>
+        </div>
+        <div>
+            <span>${json[conference][key].percent}</span>
+        </div>
+      `;
+      li.querySelector('.standings__team-img').style.backgroundImage = `url(${json[conference][key].team.imageUrl})`;
+      li.querySelectorAll('.standings__last-five').forEach(el => {
+        if (el.textContent == 'W') {
+          el.classList.add('win');
+        } else if (el.textContent == 'L') {
+          el.classList.add('lose');
+        }
+      });
+      body.appendChild(li);
+      if (Object.keys(json[conference]).length != Number(key) + 1) {
+        let hr = document.createElement('hr');
+        body.appendChild(hr);
+      }
+    }
+  };
+
+  //Заполнение таблицы команд при загрузке страницы
+  fillingStandings(json, 'east');
+
+  //Заполнение таблицы команд при селекции конференции
+  document.querySelectorAll('.standings .conference-selection li').forEach(el => {
+    el.addEventListener('click', function (e) {
+      if (e.target.textContent == 'Eastern conference') {
+        fillingStandings(json, 'east');
+      }
+      if (e.target.textContent == 'Western conference') {
+        fillingStandings(json, 'west');
+      }
+    });
+  });
+};
+let fillingTopPlayers = function (json) {
+  let body = document.querySelector('.topPlayers__body');
+  body.innerHTML = '';
+  for (let key in json) {
+    let li = document.createElement('li');
+    li.classList.add('topPlayers__body-item');
+    li.innerHTML = `
+      <div>
+        <span>${json[key].position}</span>
+      </div>
+      <div>
+        <span>
+          <div class="topPlayers__person-img"></div>
+            <div>
+              <p class="topPlayers__person-name">${json[key].player.person.name}</p>
+            <div>
+              <div class="topPlayers__person-team"></div>
+              <div class="topPlayers__person-position">${json[key].player.person.position}</div>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div>
+        <span>${json[key].value}</span>
+      </div>
+    `;
+    li.querySelector('.topPlayers__person-img').style.backgroundImage = `url(${json[key].player.team})`;
+    li.querySelector('.topPlayers__person-team').style.backgroundImage = `url(${json[key].player.person.img})`;
+    body.appendChild(li);
+    if (Object.keys(json).length != Number(key) + 1) {
+      let hr = document.createElement('hr');
+      body.appendChild(hr);
+    }
+  }
+};
+
+
+/***/ }),
+
+/***/ "./assets/src/js/components/league.js":
+/*!********************************************!*\
+  !*** ./assets/src/js/components/league.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fillingline": () => (/* binding */ fillingline),
+/* harmony export */   "selectLeague": () => (/* binding */ selectLeague)
+/* harmony export */ });
 let fillingline = function (value, start, today, end) {
   let line = document.querySelector('.league-progress__line-current');
   let keyFrames = document.createElement('style');
@@ -278,7 +1054,6 @@ let fillingline = function (value, start, today, end) {
                 max-width: ${value}%;
             }
         }
-
         .league-progress__line-current {
             position: absolute;
             left: 0;
@@ -304,392 +1079,74 @@ let fillingline = function (value, start, today, end) {
   dateToday.style.left = `${value}%`;
   dateToday.style.transform = 'translateX(-50%)';
 };
-fillingline(30, '19 Oct', '1 Jan', '14 Jun');
-
-/***/ }),
-
-/***/ "./assets/src/js/components/filling-table.js":
-/*!***************************************************!*\
-  !*** ./assets/src/js/components/filling-table.js ***!
-  \***************************************************/
-/***/ (() => {
-
-let jsonTeams = {
-  1: {
-    position: '1',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'Boston'
-    },
-    wins: '33',
-    loses: '23',
-    lastFive: 'WWWLL',
-    percent: '0.58'
-  },
-  2: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  3: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  4: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  5: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  6: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  7: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  8: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  9: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  10: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  11: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  12: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  13: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  14: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  },
-  15: {
-    position: '2',
-    team: {
-      imageUrl: 'static/img/pngegg.png',
-      name: 'GSW'
-    },
-    wins: '11',
-    loses: '43',
-    lastFive: 'LLWLW',
-    percent: '0.23'
-  }
-};
-let jsonTopPlayers = {
-  1: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  2: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  3: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  4: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  5: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  6: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  7: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  8: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  9: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  },
-  10: {
-    position: '1',
-    player: {
-      team: 'static/img/pngegg.png',
-      person: {
-        img: 'static/img/pngegg.png',
-        name: 'Stephen Curry',
-        position: 'Guard'
-      }
-    },
-    percent: '0.58'
-  }
-};
-let fillingStandings = function (json) {
-  let body = document.querySelector('.standings__body');
-  body.innerHTML = '';
-  for (let key in json) {
+let selectLeague = function (json) {
+  let list = document.querySelector('.league-selection .select-list');
+  list.innerHTML = '';
+  for (let i = 0; i < json.length; i++) {
     let li = document.createElement('li');
-    let hr = document.createElement('hr');
-    li.classList.add('standings__body-item');
-    li.innerHTML = `
-      <div>
-          <span>${json[key].position}</span>
-      </div>
-      <div>
-          <span>
-              <div class="standings__team-img"></div>
-              <p class="standings__team-name">${json[key].team.name}</p>
-          </span>
-      </div>
-      <div>
-          <span>${json[key].wins}</span>
-      </div>
-      <div>
-          <span>${json[key].loses}</span>
-      </div>
-      <div>
-          <span>
-              <div class="standings__last-five">${json[key].lastFive[0]}</div>
-              <div class="standings__last-five">${json[key].lastFive[1]}</div>
-              <div class="standings__last-five">${json[key].lastFive[2]}</div>
-              <div class="standings__last-five">${json[key].lastFive[3]}</div>
-              <div class="standings__last-five">${json[key].lastFive[4]}</div>
-          </span>
-      </div>
-      <div>
-          <span>${json[key].percent}</span>
-      </div>
-    `;
-    li.querySelector('.standings__team-img').style.backgroundImage = `url(${json[key].team.imageUrl})`;
-    li.querySelectorAll('.standings__last-five').forEach(el => {
-      if (el.textContent == 'W') {
-        el.classList.add('win');
-      } else if (el.textContent == 'L') {
-        el.classList.add('lose');
+    li.textContent = json[i].name;
+    list.appendChild(li);
+  }
+  list.querySelectorAll('li').forEach(element => {
+    element.addEventListener('click', function (e) {
+      for (let i = 0; i < json.length; i++) {
+        if (json[i].name == element.textContent) {
+          document.querySelector('.league-card').innerHTML = `
+                        <div class="league-img"></div>
+                        <div class="league-content">
+                            <p class="league-name">${json[i].name}</p>
+                            <div class="league-country">
+                                <div class="country-icon"></div>
+                                <p class="country-name">${json[i].country.name}</p>
+                            </div>
+                        </div>
+                    `;
+          document.querySelector('.league-img').style.backgroundImage = `url(${json[i].img})`;
+          document.querySelector('.country-icon').style.backgroundImage = `url(${json[i].country.img})`;
+        }
       }
     });
-    body.appendChild(li);
-    if (!(Object.keys(json).length == key)) {
-      body.appendChild(hr);
-    }
-  }
+  });
 };
-let fillingTopPlayers = function (json) {
-  let body = document.querySelector('.topPlayers__body');
-  body.innerHTML = '';
-  for (let key in json) {
-    let li = document.createElement('li');
-    let hr = document.createElement('hr');
-    li.classList.add('topPlayers__body-item');
-    li.innerHTML = `
-        <div>
-          <span>${json[key].position}</span>
-        </div>
-        <div>
-          <span>
-            <div class="topPlayers__person-img"></div>
-              <div>
-                <p class="topPlayers__person-name">${json[key].player.person.name}</p>
-              <div>
-                <div class="topPlayers__person-team"></div>
-                <div class="topPlayers__person-position">${json[key].player.person.position}</div>
-              </div>
-            </div>
-          </span>
-        </div>
-        <div>
-          <span>${json[key].percent}</span>
-        </div>
-      `;
-    li.querySelector('.topPlayers__person-img').style.backgroundImage = `url(${json[key].player.team})`;
-    li.querySelector('.topPlayers__person-team').style.backgroundImage = `url(${json[key].player.person.img})`;
-    body.appendChild(li);
-    if (!(Object.keys(json).length == key)) {
-      body.appendChild(hr);
-    }
+let jsonLeague = [{
+  name: 'NBA',
+  img: 'static/img/pngegg.png',
+  season: {
+    start: '19 Oct',
+    end: '14 Jun',
+    today: '18 Jan'
+  },
+  country: {
+    name: 'USA',
+    img: 'static/img/pngegg.png'
   }
-};
-fillingStandings(jsonTeams);
-fillingTopPlayers(jsonTopPlayers);
+}, {
+  name: 'Euroleague',
+  img: 'static/img/pngegg.png',
+  season: {
+    start: '2 Oct',
+    end: '1 Jul',
+    today: '18 Jan'
+  },
+  country: {
+    name: 'Europe',
+    img: 'static/img/pngegg.png'
+  }
+}, {
+  name: 'VTB League',
+  img: 'static/img/pngegg.png',
+  season: {
+    start: '2 Oct',
+    end: '1 Jul',
+    today: '18 Jan'
+  },
+  country: {
+    name: 'Russia',
+    img: 'static/img/pngegg.png'
+  }
+}];
+selectLeague(jsonLeague);
+
 
 /***/ }),
 
@@ -697,277 +1154,13 @@ fillingTopPlayers(jsonTopPlayers);
 /*!*********************************************!*\
   !*** ./assets/src/js/components/matches.js ***!
   \*********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-let json = [{
-  time: '12:00',
-  matches: {
-    1: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    },
-    2: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    }
-  }
-}, {
-  time: '15:00',
-  matches: {
-    1: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    },
-    2: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    },
-    3: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    }
-  }
-}, {
-  time: '15:00',
-  matches: {
-    1: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    },
-    2: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    },
-    3: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    }
-  }
-}, {
-  time: '18:00',
-  matches: {
-    1: {
-      comands: {
-        1: {
-          name: 'Golden State Warriors',
-          standings: '2',
-          place: 'Home',
-          img: '../img/pngegg.png'
-        },
-        2: {
-          name: 'Orlando Magick',
-          standings: '10',
-          place: 'Guests',
-          img: '../img/pngegg.png'
-        }
-      }
-    }
-  }
-}];
-let fillMatches1 = function (json) {
-  let matches = document.querySelector('.matches');
-  let saveHeightcard = 60;
-  let saveHeightTime = 101;
-  let saveHeightLine = 116;
-  matches.innerHTML = '';
-  let width = matches.offsetWidth;
-  let height = matches.offsetHeight;
-  console.log(matches.scrollHeight);
-  const canvas = document.getElementById('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  const context = canvas.getContext('2d');
-  context.beginPath();
-  let midleLine = document.createElement('div');
-  midleLine.classList.add('midleLine');
-  matches.appendChild(midleLine);
-  for (let i = 0; i < json.length; i++) {
-    let midleLineBlock = document.createElement('div');
-    midleLineBlock.classList.add('midleLine__time');
-    let p = document.createElement('p');
-    p.textContent = json[i].time;
-    p.style.top = `${saveHeightTime}px`;
-    midleLineBlock.appendChild(p);
-    matches.appendChild(midleLineBlock);
-    for (let key in json[i].matches) {
-      let match = document.createElement('div');
-      match.classList.add('midleLine__match');
-      match.innerHTML = `
-                <div class="midleLine__match-command">
-                    <div class="command__img"></div>
-                    <div class="command__info">
-                        <div class="command__info-name">
-                            <p>${json[i].matches[key].comands[1].name}</p>
-                            <span class="command__info-position">#
-                            ${json[i].matches[key].comands[1].standings}
-                            </span>
-                        </div>
-                        <div class="command__info-stadium">
-                        ${json[i].matches[key].comands[1].place}
-                        </div>
-                    </div>
-                </div>
-                <div class="midleLine__match-command">
-                    <div class="command__img"></div>
-                    <div class="command__info">
-                        <div class="command__info-name">
-                            <p>${json[i].matches[key].comands[2].name}</p>
-                            <span class="command__info-position">#
-                            ${json[i].matches[key].comands[2].standings}
-                            </span>
-                        </div>
-                        <div class="command__info-stadium">
-                        ${json[i].matches[key].comands[2].place}
-                        </div>
-                    </div>
-                </div>
-            `;
-      match.style.top = `${saveHeightcard}px`;
-      if (i % 2 == 1) {
-        match.style.left = '30px';
-        let blockX = width / 2 - width / 2 + 300;
-        let timeX = width / 2;
-        let centerX = timeX - (timeX - blockX + 35) / 2;
-        let radius = (timeX - blockX) / 4;
-        if (key == 1) {
-          context.moveTo(timeX, saveHeightLine);
-          context.lineTo(blockX, saveHeightLine);
-        } else {
-          if (radius > 50) {
-            radius = 50;
-          }
-          context.moveTo(timeX, saveHeightTime + 15);
-          context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
-          context.lineTo(centerX, saveHeightLine - radius);
-          context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
-          context.lineTo(blockX, saveHeightLine);
-        }
-      } else {
-        let blockX = width / 2 + width / 2 - 300;
-        let timeX = width / 2;
-        let centerX = timeX + (blockX - timeX) / 2;
-        let radius = (blockX - timeX) / 4;
-        if (key == 1) {
-          context.moveTo(timeX, saveHeightLine);
-          context.lineTo(blockX, saveHeightLine);
-        } else {
-          if (radius > 50) {
-            radius = 50;
-          }
-          context.moveTo(timeX, saveHeightTime + 15);
-          context.arcTo(centerX, saveHeightTime + 15, centerX, saveHeightTime + 15 + radius, radius);
-          context.lineTo(centerX, saveHeightLine - radius);
-          context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
-          context.lineTo(blockX, saveHeightLine);
-        }
-      }
-      saveHeightcard = saveHeightcard + 112 + 20;
-      saveHeightLine = saveHeightLine + 112 + 20;
-      midleLineBlock.appendChild(match);
-    }
-    let count = Object.keys(json[i].matches).length;
-    saveHeightTime = saveHeightTime + count * (112 + 20);
-  }
-  context.lineWidth = 10;
-  context.strokeStyle = '#DFE7F1';
-  context.stroke();
-};
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fillMatches": () => (/* binding */ fillMatches)
+/* harmony export */ });
 let fillMatches = function (json) {
   let matches = document.querySelector('.matches');
   matches.innerHTML = '';
@@ -980,8 +1173,6 @@ let fillMatches = function (json) {
     let p = document.createElement('p');
     p.textContent = json[i].time;
     const canvas = document.createElement('canvas');
-    //canvas.width = '100%';
-    //canvas.height = '100%';
     const context = canvas.getContext('2d');
     context.beginPath();
     midleLineBlock.appendChild(p);
@@ -1019,21 +1210,65 @@ let fillMatches = function (json) {
                     </div>
                 </div>
             `;
+      midleLineBlock.appendChild(match);
+    }
+    let width = midleLineBlock.offsetWidth;
+    let height = midleLineBlock.offsetHeight;
+    canvas.width = width;
+    canvas.height = height;
+    let blockX = 270;
+    let timeX = width;
+    let centerX = timeX - (timeX - blockX) / 2;
+    let saveHeightLine = 56;
+    let saveHeightTime = 56;
+    let radius = (timeX - blockX) / 6;
+    for (let key in json[i].matches) {
       if (i % 2 == 1) {
         midleLineBlock.style.margin = '0 0 20px auto';
         midleLineBlock.style.padding = '0 20px 0 0';
         midleLineBlock.style.alignItems = 'flex-end';
         p.style.left = '0';
-      } else {}
-      midleLineBlock.appendChild(match);
+        blockX = width - 270;
+        timeX = 0;
+        centerX = blockX / 2;
+        radius = blockX / 6;
+        if (key == 1) {
+          context.moveTo(timeX, saveHeightLine);
+          context.lineTo(blockX, saveHeightLine);
+        } else {
+          if (radius > 50) {
+            radius = 50;
+          }
+          context.moveTo(timeX, saveHeightTime);
+          context.arcTo(centerX, saveHeightTime, centerX, saveHeightTime + radius, radius);
+          context.lineTo(centerX, saveHeightLine - radius);
+          context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
+          context.lineTo(blockX, saveHeightLine);
+        }
+      } else {
+        if (key == 1) {
+          context.moveTo(timeX, saveHeightLine);
+          context.lineTo(blockX, saveHeightLine);
+        } else {
+          if (radius > 50) {
+            radius = 50;
+          }
+          context.moveTo(timeX, saveHeightTime);
+          context.arcTo(centerX, saveHeightTime, centerX, saveHeightTime + radius, radius);
+          context.lineTo(centerX, saveHeightLine - radius);
+          context.arcTo(centerX, saveHeightLine, blockX, saveHeightLine, radius);
+          context.lineTo(blockX, saveHeightLine);
+        }
+      }
+      saveHeightLine = saveHeightLine + 132;
     }
+    context.lineWidth = 10;
+    context.strokeStyle = '#DFE7F1';
+    context.stroke();
     midleLineBlock.appendChild(canvas);
   }
 };
-fillMatches(json);
-window.addEventListener('resize', function (event) {
-  fillMatches(json);
-});
+
 
 /***/ }),
 
@@ -1054,12 +1289,14 @@ document.querySelectorAll('.select').forEach(el => {
         });
         elem.classList.add('selected');
       }
-    });
-  });
-  el.querySelectorAll('li').forEach(elem => {
-    elem.addEventListener('click', e => {
-      button.querySelector('span').textContent = elem.textContent;
-      el.classList.toggle('active');
+      elem.addEventListener('click', e => {
+        button.querySelector('span').textContent = elem.textContent;
+        el.querySelectorAll('li').forEach(elem => {
+          elem.classList.remove('selected');
+        });
+        elem.classList.add('selected');
+        el.classList.remove('active');
+      });
     });
   });
   document.addEventListener('click', e => {
