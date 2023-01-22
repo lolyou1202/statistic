@@ -271,6 +271,9 @@ let calendar = function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getLeague": () => (/* binding */ getLeague)
+/* harmony export */ });
 /* harmony import */ var _filling_table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filling-table */ "./assets/src/js/components/filling-table.js");
 /* harmony import */ var _matches__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./matches */ "./assets/src/js/components/matches.js");
 /* harmony import */ var _league__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./league */ "./assets/src/js/components/league.js");
@@ -279,46 +282,1834 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const getLeague = async (url, e) => {
+  //let response = await fetch(url);
+  // if (response.ok) {
+  //     let data = await response.json();
+  //     return data;
+  // }
+  if (e.target.textContent == 'Euroleague') {
+    let data = {
+      league: {
+        show: 'Euroleague',
+        property: {
+          name: 'Euroleague',
+          img: 'static/img/pngegg.png',
+          season: {
+            start: '1 Oct',
+            end: '3 May',
+            today: '22 Jan',
+            value: '40'
+          },
+          country: {
+            name: 'Europe',
+            img: 'static/img/pngegg.png'
+          }
+        }
+        //select: ['NBA', 'Euroleague', 'VTB League']
+      },
+
+      standings: {
+        east: [{
+          position: '1',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Indiana'
+          },
+          wins: '33',
+          loses: '23',
+          lastFive: 'WWWLL',
+          percent: '0.58'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Golden State'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLLLL',
+          percent: '0.11'
+        }, {
+          position: '3',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '4',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '5',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '6',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '7',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '8',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '9',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '10',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '11',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '12',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '13',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '14',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '15',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }],
+        west: [{
+          position: '1',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Milwaukee'
+          },
+          wins: '33',
+          loses: '23',
+          lastFive: 'WWWLL',
+          percent: '0.58'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Milwaukee'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '3',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }]
+      },
+      topPlayers: [{
+        position: '1',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '2',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '3',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '4',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '5',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '6',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '7',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '8',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '9',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '10',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }],
+      matches: [{
+        time: '12:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '15:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          3: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '16:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          3: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '18:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }]
+    };
+    return data;
+  }
+  if (e.target.textContent == 'VTB League') {
+    let data = {
+      league: {
+        show: 'VTB League',
+        property: {
+          name: 'VTB League',
+          img: 'static/img/pngegg.png',
+          season: {
+            start: '30 Nov',
+            end: '1 Aug',
+            today: '22 Jan',
+            value: '20'
+          },
+          country: {
+            name: 'Russia',
+            img: 'static/img/pngegg.png'
+          }
+        }
+        //select: ['NBA', 'Euroleague', 'VTB League']
+      },
+
+      standings: {
+        east: [{
+          position: '1',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Boston'
+          },
+          wins: '33',
+          loses: '23',
+          lastFive: 'WWWLL',
+          percent: '0.58'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Golden State'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLLLL',
+          percent: '0.11'
+        }, {
+          position: '3',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '4',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '5',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '6',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '7',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '8',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '9',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '10',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '11',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '12',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '13',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '14',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '15',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }],
+        west: [{
+          position: '1',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Milwaukee'
+          },
+          wins: '33',
+          loses: '23',
+          lastFive: 'WWWLL',
+          percent: '0.58'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Milwaukee'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '3',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }]
+      },
+      topPlayers: [{
+        position: '1',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '2',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '3',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '4',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '5',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '6',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '7',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '8',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '9',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '10',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }],
+      matches: [{
+        time: '12:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '15:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          3: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '16:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          3: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '18:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }]
+    };
+    return data;
+  }
+  if (e.target.textContent == 'NBA') {
+    let data = {
+      league: {
+        show: 'NBA',
+        property: {
+          name: 'NBA',
+          img: 'static/img/pngegg.png',
+          season: {
+            start: '19 Oct',
+            end: '14 Jun',
+            today: '18 Jan',
+            value: '70'
+          },
+          country: {
+            name: 'USA',
+            img: 'static/img/pngegg.png'
+          }
+        }
+        //select: ['NBA', 'Euroleague', 'VTB League']
+      },
+
+      standings: {
+        east: [{
+          position: '1',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Boston'
+          },
+          wins: '33',
+          loses: '23',
+          lastFive: 'WWWLL',
+          percent: '0.58'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Golden State'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLLLL',
+          percent: '0.11'
+        }, {
+          position: '3',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '4',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '5',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '6',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '7',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '8',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '9',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '10',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '11',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '12',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '13',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '14',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '15',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }],
+        west: [{
+          position: '1',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Milwaukee'
+          },
+          wins: '33',
+          loses: '23',
+          lastFive: 'WWWLL',
+          percent: '0.58'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'Milwaukee'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '3',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }, {
+          position: '2',
+          team: {
+            imageUrl: 'static/img/pngegg.png',
+            name: 'GSW'
+          },
+          wins: '11',
+          loses: '43',
+          lastFive: 'LLWLW',
+          percent: '0.23'
+        }]
+      },
+      topPlayers: [{
+        position: '1',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '2',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '3',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '4',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '5',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '6',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '7',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '8',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '9',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }, {
+        position: '10',
+        player: {
+          team: 'static/img/pngegg.png',
+          person: {
+            img: 'static/img/pngegg.png',
+            name: 'Stephen Curry',
+            position: 'Guard'
+          }
+        },
+        value: '0.58'
+      }],
+      matches: [{
+        time: '12:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '15:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          3: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '16:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          2: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          },
+          3: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }, {
+        time: '18:00',
+        matches: {
+          1: {
+            comands: {
+              1: {
+                name: 'Golden State Warriors',
+                standings: '2',
+                place: 'Home',
+                img: '../img/pngegg.png'
+              },
+              2: {
+                name: 'Orlando Magick',
+                standings: '10',
+                place: 'Guests',
+                img: '../img/pngegg.png'
+              }
+            }
+          }
+        }
+      }]
+    };
+    return data;
+  }
+};
 
 //json при загрузке страницы
-let mainJson = {
-  league: [{
-    name: 'NBA',
-    img: 'static/img/pngegg.png',
-    season: {
-      start: '19 Oct',
-      end: '14 Jun',
-      today: '18 Jan'
+let NBA = {
+  league: {
+    show: 'NBA',
+    property: {
+      name: 'NBA',
+      img: 'static/img/pngegg.png',
+      season: {
+        start: '19 Oct',
+        end: '14 Jun',
+        today: '18 Jan',
+        value: '70'
+      },
+      country: {
+        name: 'USA',
+        img: 'static/img/pngegg.png'
+      }
     },
-    country: {
-      name: 'USA',
-      img: 'static/img/pngegg.png'
-    }
-  }, {
-    name: 'Euroleague',
-    img: 'static/img/pngegg.png',
-    season: {
-      start: '2 Oct',
-      end: '1 Jul',
-      today: '18 Jan'
-    },
-    country: {
-      name: 'Europe',
-      img: 'static/img/pngegg.png'
-    }
-  }, {
-    name: 'VTB League',
-    img: 'static/img/pngegg.png',
-    season: {
-      start: '2 Oct',
-      end: '1 Jul',
-      today: '18 Jan'
-    },
-    country: {
-      name: 'Russia',
-      img: 'static/img/pngegg.png'
-    }
-  }],
+    select: ['NBA', 'Euroleague', 'VTB League']
+  },
   standings: {
     east: [{
       position: '1',
@@ -896,18 +2687,1217 @@ let mainJson = {
     }
   }]
 };
-let fillingAll = function (mainJson) {
-  //fillingLeague();
-  (0,_filling_table__WEBPACK_IMPORTED_MODULE_0__.standings)(mainJson.standings, 'east');
-  (0,_filling_table__WEBPACK_IMPORTED_MODULE_0__.fillingTopPlayers)(mainJson.topPlayers);
-  (0,_matches__WEBPACK_IMPORTED_MODULE_1__.fillMatches)(mainJson.matches);
-  (0,_calendar__WEBPACK_IMPORTED_MODULE_3__.calendar)();
+let Euroleague = {
+  league: {
+    show: 'NBA',
+    property: {
+      name: 'NBA',
+      img: 'static/img/pngegg.png',
+      season: {
+        start: '19 Oct',
+        end: '14 Jun',
+        today: '18 Jan',
+        value: '70'
+      },
+      country: {
+        name: 'USA',
+        img: 'static/img/pngegg.png'
+      }
+    },
+    select: ['NBA', 'Euroleague', 'VTB League']
+  },
+  standings: {
+    east: [{
+      position: '1',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Boston'
+      },
+      wins: '33',
+      loses: '23',
+      lastFive: 'WWWLL',
+      percent: '0.58'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Golden State'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLLLL',
+      percent: '0.11'
+    }, {
+      position: '3',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '4',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '5',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '6',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '7',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '8',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '9',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '10',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '11',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '12',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '13',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '14',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '15',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }],
+    west: [{
+      position: '1',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Milwaukee'
+      },
+      wins: '33',
+      loses: '23',
+      lastFive: 'WWWLL',
+      percent: '0.58'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Milwaukee'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '3',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }]
+  },
+  topPlayers: [{
+    position: '1',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '2',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '3',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '4',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '5',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '6',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '7',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '8',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '9',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '10',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }],
+  matches: [{
+    time: '12:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '15:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      3: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '16:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      3: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '18:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }]
 };
-fillingAll(mainJson);
-window.addEventListener('resize', () => {
-  (0,_matches__WEBPACK_IMPORTED_MODULE_1__.fillMatches)(mainJson.matches);
+let VTBLeague = {
+  league: {
+    show: 'NBA',
+    property: {
+      name: 'NBA',
+      img: 'static/img/pngegg.png',
+      season: {
+        start: '19 Oct',
+        end: '14 Jun',
+        today: '18 Jan',
+        value: '70'
+      },
+      country: {
+        name: 'USA',
+        img: 'static/img/pngegg.png'
+      }
+    },
+    select: ['NBA', 'Euroleague', 'VTB League']
+  },
+  standings: {
+    east: [{
+      position: '1',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Boston'
+      },
+      wins: '33',
+      loses: '23',
+      lastFive: 'WWWLL',
+      percent: '0.58'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Golden State'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLLLL',
+      percent: '0.11'
+    }, {
+      position: '3',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '4',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '5',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '6',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '7',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '8',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '9',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '10',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '11',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '12',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '13',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '14',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '15',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }],
+    west: [{
+      position: '1',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Milwaukee'
+      },
+      wins: '33',
+      loses: '23',
+      lastFive: 'WWWLL',
+      percent: '0.58'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'Milwaukee'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '3',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }, {
+      position: '2',
+      team: {
+        imageUrl: 'static/img/pngegg.png',
+        name: 'GSW'
+      },
+      wins: '11',
+      loses: '43',
+      lastFive: 'LLWLW',
+      percent: '0.23'
+    }]
+  },
+  topPlayers: [{
+    position: '1',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '2',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '3',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '4',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '5',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '6',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '7',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '8',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '9',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }, {
+    position: '10',
+    player: {
+      team: 'static/img/pngegg.png',
+      person: {
+        img: 'static/img/pngegg.png',
+        name: 'Stephen Curry',
+        position: 'Guard'
+      }
+    },
+    value: '0.58'
+  }],
+  matches: [{
+    time: '12:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '15:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      3: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '16:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      2: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      },
+      3: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }, {
+    time: '18:00',
+    matches: {
+      1: {
+        comands: {
+          1: {
+            name: 'Golden State Warriors',
+            standings: '2',
+            place: 'Home',
+            img: '../img/pngegg.png'
+          },
+          2: {
+            name: 'Orlando Magick',
+            standings: '10',
+            place: 'Guests',
+            img: '../img/pngegg.png'
+          }
+        }
+      }
+    }
+  }]
+};
+let fillingAll = function (Json) {
+  (0,_league__WEBPACK_IMPORTED_MODULE_2__.fillingLeague)(Json.league);
+  (0,_filling_table__WEBPACK_IMPORTED_MODULE_0__.standings)(Json.standings, 'east');
+  (0,_filling_table__WEBPACK_IMPORTED_MODULE_0__.fillingTopPlayers)(Json.topPlayers);
+  (0,_matches__WEBPACK_IMPORTED_MODULE_1__.fillMatches)(Json.matches);
+  (0,_calendar__WEBPACK_IMPORTED_MODULE_3__.calendar)();
+  window.addEventListener('resize', () => {
+    (0,_matches__WEBPACK_IMPORTED_MODULE_1__.fillMatches)(Json.matches);
+  });
+};
+fillingAll(NBA);
+let list = document.querySelector('.league-selection .select-list');
+list.querySelectorAll('li').forEach(element => {
+  element.addEventListener('click', function (e) {
+    getLeague('/asd', e).then(data => {
+      fillingAll(data);
+    });
+  });
 });
-(0,_league__WEBPACK_IMPORTED_MODULE_2__.fillingline)(30, '19 Oct', '1 Jan', '14 Jun');
 
 /***/ }),
 
@@ -1039,13 +4029,13 @@ let fillingTopPlayers = function (json) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "fillingline": () => (/* binding */ fillingline),
-/* harmony export */   "selectLeague": () => (/* binding */ selectLeague)
+/* harmony export */   "fillingLeague": () => (/* binding */ fillingLeague)
 /* harmony export */ });
-let fillingline = function (value, start, today, end) {
-  let line = document.querySelector('.league-progress__line-current');
-  let keyFrames = document.createElement('style');
-  keyFrames.innerHTML = `
+let fillingLeague = function (json) {
+  let fillingline = function (value, start, today, end) {
+    let line = document.querySelector('.league-progress__line-current');
+    let keyFrames = document.createElement('style');
+    keyFrames.innerHTML = `
         @keyframes linefilling {
             0% {
                 max-width: 0;
@@ -1067,85 +4057,48 @@ let fillingline = function (value, start, today, end) {
             animation: linefilling 1s ease-in-out;
         }
     `;
-  line.appendChild(keyFrames);
-  let dateStart = document.querySelector('.league-progress__start');
-  let dateEnd = document.querySelector('.league-progress__end');
-  let dateToday = document.querySelector('.league-progress__today');
-  dateStart.textContent = start;
-  dateStart.style.left = 0;
-  dateEnd.textContent = end;
-  dateEnd.style.right = 0;
-  dateToday.textContent = today;
-  dateToday.style.left = `${value}%`;
-  dateToday.style.transform = 'translateX(-50%)';
+    line.appendChild(keyFrames);
+    let dateStart = document.querySelector('.league-progress__start');
+    let dateEnd = document.querySelector('.league-progress__end');
+    let dateToday = document.querySelector('.league-progress__today');
+    dateStart.textContent = start;
+    dateStart.style.left = 0;
+    dateEnd.textContent = end;
+    dateEnd.style.right = 0;
+    dateToday.textContent = today;
+    dateToday.style.left = `${value}%`;
+    dateToday.style.transform = 'translateX(-50%)';
+  };
+  let selectLeague = function (data) {
+    document.querySelector('.league-card').innerHTML = `
+        <div class="league-img"></div>
+        <div class="league-content">
+            <p class="league-name">${data.property.name}</p>
+            <div class="league-country">
+                <div class="country-icon"></div>
+                <p class="country-name">${data.property.country.name}</p>
+            </div>
+        </div>
+    `;
+    document.querySelector('.league-img').style.backgroundImage = `url(${data.property.img})`;
+    document.querySelector('.country-icon').style.backgroundImage = `url(${data.property.country.img})`;
+  };
+
+  // let fillSelectLeague = function (json) {
+  //   let list = document.querySelector('.league-selection .select-list');
+  //   list.innerHTML = '';
+
+  //   for (let i = 0; i < json.length; i++) {
+  //     let li = document.createElement('li');
+  //     li.textContent = json[i];
+  //     list.appendChild(li);
+  //   }
+  // }
+
+  fillingline(json.property.season.value, json.property.season.start, json.property.season.today, json.property.season.end);
+  //fillSelectLeague(json.select)
+  selectLeague(json);
 };
-let selectLeague = function (json) {
-  let list = document.querySelector('.league-selection .select-list');
-  list.innerHTML = '';
-  for (let i = 0; i < json.length; i++) {
-    let li = document.createElement('li');
-    li.textContent = json[i].name;
-    list.appendChild(li);
-  }
-  list.querySelectorAll('li').forEach(element => {
-    element.addEventListener('click', function (e) {
-      for (let i = 0; i < json.length; i++) {
-        if (json[i].name == element.textContent) {
-          document.querySelector('.league-card').innerHTML = `
-                        <div class="league-img"></div>
-                        <div class="league-content">
-                            <p class="league-name">${json[i].name}</p>
-                            <div class="league-country">
-                                <div class="country-icon"></div>
-                                <p class="country-name">${json[i].country.name}</p>
-                            </div>
-                        </div>
-                    `;
-          document.querySelector('.league-img').style.backgroundImage = `url(${json[i].img})`;
-          document.querySelector('.country-icon').style.backgroundImage = `url(${json[i].country.img})`;
-        }
-      }
-    });
-  });
-};
-let jsonLeague = [{
-  name: 'NBA',
-  img: 'static/img/pngegg.png',
-  season: {
-    start: '19 Oct',
-    end: '14 Jun',
-    today: '18 Jan'
-  },
-  country: {
-    name: 'USA',
-    img: 'static/img/pngegg.png'
-  }
-}, {
-  name: 'Euroleague',
-  img: 'static/img/pngegg.png',
-  season: {
-    start: '2 Oct',
-    end: '1 Jul',
-    today: '18 Jan'
-  },
-  country: {
-    name: 'Europe',
-    img: 'static/img/pngegg.png'
-  }
-}, {
-  name: 'VTB League',
-  img: 'static/img/pngegg.png',
-  season: {
-    start: '2 Oct',
-    end: '1 Jul',
-    today: '18 Jan'
-  },
-  country: {
-    name: 'Russia',
-    img: 'static/img/pngegg.png'
-  }
-}];
-selectLeague(jsonLeague);
 
 
 /***/ }),

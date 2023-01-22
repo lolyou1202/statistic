@@ -108,5 +108,4 @@ let fillingTopPlayers = function (json) {
   }
 }
 
-
 export {standings, fillingTopPlayers}

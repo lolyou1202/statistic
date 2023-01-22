@@ -1,7 +1,7 @@
-let fillingline = function (value, start, today, end) {
+let fillingLeague = function (json) {
+  let fillingline = function (value, start, today, end) {
     let line = document.querySelector('.league-progress__line-current');
     let keyFrames = document.createElement('style');
-
     keyFrames.innerHTML = `
         @keyframes linefilling {
             0% {
@@ -37,78 +37,37 @@ let fillingline = function (value, start, today, end) {
     dateToday.textContent = today;
     dateToday.style.left = `${value}%`;
     dateToday.style.transform = 'translateX(-50%)';
+  }
+
+  let selectLeague = function (data) {
+    document.querySelector('.league-card').innerHTML = `
+        <div class="league-img"></div>
+        <div class="league-content">
+            <p class="league-name">${data.property.name}</p>
+            <div class="league-country">
+                <div class="country-icon"></div>
+                <p class="country-name">${data.property.country.name}</p>
+            </div>
+        </div>
+    `;
+    document.querySelector('.league-img').style.backgroundImage = `url(${data.property.img})`;
+    document.querySelector('.country-icon').style.backgroundImage = `url(${data.property.country.img})`;
+  }
+
+  // let fillSelectLeague = function (json) {
+  //   let list = document.querySelector('.league-selection .select-list');
+  //   list.innerHTML = '';
+
+  //   for (let i = 0; i < json.length; i++) {
+  //     let li = document.createElement('li');
+  //     li.textContent = json[i];
+  //     list.appendChild(li);
+  //   }
+  // }
+
+  fillingline(json.property.season.value, json.property.season.start, json.property.season.today, json.property.season.end)
+  //fillSelectLeague(json.select)
+  selectLeague(json);
 }
 
-let selectLeague = function (json) {
-    let list = document.querySelector('.league-selection .select-list');
-    list.innerHTML = '';
-    for (let i = 0; i < json.length; i++) {
-        let li = document.createElement('li');
-        li.textContent = json[i].name;
-        list.appendChild(li);
-    }
-    list.querySelectorAll('li').forEach((element) => {
-        element.addEventListener('click', function(e) {
-            for (let i = 0; i < json.length; i++) {
-                if (json[i].name == element.textContent) {
-                    document.querySelector('.league-card').innerHTML = `
-                        <div class="league-img"></div>
-                        <div class="league-content">
-                            <p class="league-name">${json[i].name}</p>
-                            <div class="league-country">
-                                <div class="country-icon"></div>
-                                <p class="country-name">${json[i].country.name}</p>
-                            </div>
-                        </div>
-                    `;
-                    document.querySelector('.league-img').style.backgroundImage = `url(${json[i].img})`;
-                    document.querySelector('.country-icon').style.backgroundImage = `url(${json[i].country.img})`;
-                }
-            }
-        })
-    })
-}
-let jsonLeague = [
-    {
-      name: 'NBA',
-      img: 'static/img/pngegg.png',
-      season: {
-        start: '19 Oct',
-        end: '14 Jun',
-        today: '18 Jan'
-      },
-      country: {
-        name: 'USA',
-        img: 'static/img/pngegg.png'
-      }
-    },
-    {
-      name: 'Euroleague',
-      img: 'static/img/pngegg.png',
-      season: {
-        start: '2 Oct',
-        end: '1 Jul',
-        today: '18 Jan'
-      },
-      country: {
-        name: 'Europe',
-        img: 'static/img/pngegg.png'
-      }
-    },
-    {
-      name: 'VTB League',
-      img: 'static/img/pngegg.png',
-      season: {
-        start: '2 Oct',
-        end: '1 Jul',
-        today: '18 Jan'
-      },
-      country: {
-        name: 'Russia',
-        img: 'static/img/pngegg.png'
-      }
-    }
-]
-selectLeague(jsonLeague);
-export {fillingline, selectLeague}
-
+export {fillingLeague}

@@ -299,6 +299,25 @@ a {
   pointer-events: none;
 }
 
+.select.attribute-selection ul {
+  overflow: auto;
+}
+.select.attribute-selection ul::-webkit-scrollbar {
+  width: 10px;
+}
+.select.attribute-selection ul::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 40px;
+}
+.select.attribute-selection ul::-webkit-scrollbar-thumb {
+  background-color: rgba(67, 78, 97, 0.3);
+  border: 3px solid var(--primary);
+  border-radius: 40px;
+}
+.select.attribute-selection li {
+  margin: 4px 0 4px 4px;
+}
+
 .main {
   width: 100%;
   height: 100vh;
