@@ -110,11 +110,16 @@ a {
     font-size: 10px;
     line-height: 11px;
     color: var(--primary-font);
-    transition: all .4s ease-in-out;
+    transition: all .2s ease-in-out;
   }
   &.active {
+    button {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
     ul {
-      max-height: 100vh;
+      max-height: 150px;
     }
   }
   li {
@@ -130,5 +135,25 @@ a {
       cursor: default;
       pointer-events: none;
     }
+  }
+}
+.select.attribute-selection {
+  ul {
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: var(--primary);
+        border-radius: 40px;
+      }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(67, 78, 97, .3);
+        border: 3px solid var(--primary);
+        border-radius: 40px;
+    }
+  }
+  li {
+    margin: 4px 0 4px 4px;
   }
 }

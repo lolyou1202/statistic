@@ -1,0 +1,63 @@
+.sidebar {
+  display: none;
+  background: var(--primary-second);
+  border-radius: 16px;
+  height: calc(100vh - 40px);
+  padding: 20px 0;
+  width: 64px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 102;
+  -webkit-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.sidebar.active {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 600px;
+}
+.sidebar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar-container.active {
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 101;
+  pointer-events: all;
+}
+.sidebar button {
+  border: 0;
+  background: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.sidebar button:hover svg {
+  fill: rgba(67, 78, 97, 0.6);
+}
+.sidebar svg {
+  pointer-events: none;
+  fill: rgba(67, 78, 97, 0.3);
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+/*# sourceMappingURL=sidebar.css.map */

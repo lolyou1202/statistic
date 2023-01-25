@@ -1,0 +1,101 @@
+canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+.matches {
+    width: 100%;
+    //height: 100%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 60px 0;
+}
+.midleLine {
+    width: 10px;
+    height: 100%;
+    background: var(--primary);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    &__block {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 0 auto 20px 0;
+        padding: 0 0 0 20px;
+        width: 50%;
+        & > p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 30px;
+            background: var(--primary);
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 15px;
+            position: absolute;
+            left: 100%;
+            top: 41px;
+            transform: translateX(-50%);
+        }
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+.matchInBlock {
+    width: 270px;
+    background: var(--primary);
+    padding: 15px;
+    border-radius: 20px;
+    &-command {
+        display: flex;
+        align-items: center;
+        .command {
+            &__img {
+                width: 36px;
+                height: 36px;
+                background: var(--primary-second-hover);
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            &__info {
+                &-name {
+                    display: flex;
+                    align-items: flex-end;
+                    p {
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+                }
+                &-position {
+                    margin-left: 8px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+                &-stadium {
+                    margin-top: 4px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    &:not(:nth-child(2)) {
+        margin-top: 20px;
+    }
+}

@@ -10,14 +10,17 @@ document.querySelectorAll('.select').forEach((el) => {
                 })
                 elem.classList.add('selected')
             }
+            elem.addEventListener('click', (e) => {
+                button.querySelector('span').textContent = elem.textContent;
+                el.querySelectorAll('li').forEach((elem) => {
+                    elem.classList.remove('selected');
+                })
+                elem.classList.add('selected');
+                el.classList.remove('active');
+            })
         })
     })
-    el.querySelectorAll('li').forEach((elem) => {
-        elem.addEventListener('click', (e) => {
-            button.querySelector('span').textContent = elem.textContent;
-            el.classList.toggle('active');
-        })
-    })
+    
     document.addEventListener('click', (e) => {
         if (!(el.contains(e.target))) {
             el.classList.remove('active');

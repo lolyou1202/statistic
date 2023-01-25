@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
   <title></title>
-  <link rel="stylesheet" href="css/main.css">
-  <script defer src="js/main.js"></script>
+  <link rel="stylesheet" href="static/css/main.css">
+  <script defer src="static/js/main.js"></script>
 </head>
 
 <body class="page__body">
@@ -19,22 +19,22 @@
   <div class="league-selects">
     <div class="select league-selection">
       <button type="text">
-        <span>League selection</span>
+        <span>NBA</span>
         <svg width="12" height="12">
-          <use xlink:href="img/sprite.svg#arrow"></use>
+          <use xlink:href="static/img/sprite.svg#arrow"></use>
         </svg>
       </button>
       <ul class="select-list list-reset">
         <li>NBA</li>
         <li>Euroleague</li>
-        <li>VTB league</li>
+        <li>VTB League</li>
       </ul>
     </div>
     <div class="select season-selection">
       <button type="text">
         <span>22/23</span>
         <svg width="12" height="12">
-          <use xlink:href="img/sprite.svg#arrow"></use>
+          <use xlink:href="static/img/sprite.svg#arrow"></use>
         </svg>
       </button>
       <ul class="select-list list-reset">
@@ -70,14 +70,14 @@
             <button type="text">
               <span>Eastern conference</span>
               <svg width="12" height="12">
-                <use xlink:href="img/sprite.svg#arrow"></use>
+                <use xlink:href="static/img/sprite.svg#arrow"></use>
               </svg>
             </button>
             <ul class="select-list list-reset">
               <li>Eastern conference</li>
               <li>Western conference</li>
             </ul>
-          </div>
+        </div>
     </div>
     <div class="standings__main">
         <div class="standings__caption list-reset">
@@ -106,11 +106,69 @@
 </div>
   </section>
   <section class="middle">
-
+    <div class="matches"></div>
+<!-- <canvas id="canvas"></canvas> -->
   </section>
   <section class="right">
-    <div class="calendar"></div>
-    <div class="featured-match"></div>
+    <div class="calendar">
+    <p>Calendar</p>
+    <div class="calendar__header">
+        <div class="calendar__header-arrow arrow-left">
+            <svg width="16" height="16">
+                <use xlink:href="static/img/sprite.svg#arrow"></use>
+            </svg>
+        </div>
+        <p>September</p>
+        <div class="calendar__header-arrow arrow-right">
+            <svg width="16" height="16">
+                <use xlink:href="static/img/sprite.svg#arrow"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="calendar__main">
+        <div class="calendar__main-cap">
+            <hr>
+            <div class="days">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+            </div>
+            <hr>
+        </div>
+        <div class="calendar__main-rows"></div>
+    </div>
+</div>
+    <div class="featuredMatch">
+    <p>Featured Match</p>
+    <div class="featuredMatch__main">
+        <div>
+            <div class="featuredMatch__main-comand">
+                <div class="comand-img"></div>
+                <div class="comand-name">Trail Blazers</div>
+            </div>
+            <div class="featuredMatch__main-time">
+                <p>12:00</p>
+                <span>Chase Center, San Francisco, USA</span>
+            </div>
+            <div class="featuredMatch__main-comand">
+                <div class="comand-img"></div>
+                <div class="comand-name">Lakers</div>
+            </div>
+        </div>
+        <div>
+            <div class="bet betfirst"></div>
+            <div class="featuredMatch__main-timer">
+                <span>Today</span>
+                <p>09:34:11</p>
+            </div>
+            <div class="bet betsecond"></div>
+        </div>
+    </div>
+</div>
     <div class="topPlayers">
     <div class="topPlayers__head">
         <p class="topPlayers__head-title">Top players</p>
@@ -119,7 +177,7 @@
                 <button type="text">
                   <span>+/- per game</span>
                   <svg width="12" height="12">
-                    <use xlink:href="img/sprite.svg#arrow"></use>
+                    <use xlink:href="static/img/sprite.svg#arrow"></use>
                   </svg>
                 </button>
                 <ul class="select-list list-reset">
@@ -142,7 +200,7 @@
                 <button type="text">
                   <span>Regular</span>
                   <svg width="12" height="12">
-                    <use xlink:href="img/sprite.svg#arrow"></use>
+                    <use xlink:href="static/img/sprite.svg#arrow"></use>
                   </svg>
                 </button>
                 <ul class="select-list list-reset">
@@ -177,7 +235,7 @@
                             <p class="topPlayers__person-name">Stephen Curry</p>
                             <div>
                                 <div class="topPlayers__person-team"></div>
-                                <div class="topPlayers__person-position"></div>
+                                <div class="topPlayers__person-position">Guard</div>
                             </div>
                         </div>
                     </span>
@@ -191,7 +249,14 @@
 </div>
   </section>
 
-  <section class="sidebar"></section>
+  <div class="sidebar-container"></div>
+  <section class="sidebar">
+    <button>
+      <svg width="48" height="48">
+        <use xlink:href="static/img/sprite.svg#hamburger"></use>
+      </svg>
+    </button>
+  </section>
 </div>
 
 </body>
