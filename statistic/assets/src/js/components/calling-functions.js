@@ -1,4 +1,4 @@
-import {standings, topPlayers} from './filling-table';
+import {standings, fillingTopPlayers} from './filling-table';
 import {fillMatches} from './matches';
 import {fillingLeague} from './league';
 import {calendar} from './calendar';
@@ -1645,10 +1645,7 @@ export const getLeague = async (url, e) => {
             percent: '0.23',
           }]
       },
-      topPlayers: {
-        atribyte: '+/- per game',
-        list: [
-        {
+      topPlayers: [{
           position: '1',
           player: {
             team: 'static/img/pngegg.png',
@@ -1768,8 +1765,7 @@ export const getLeague = async (url, e) => {
           },
           value: '0.58',
         },
-        ],
-      },
+      ],
       matches: [
         {
           time: '12:00',
@@ -3863,7 +3859,7 @@ let VTBLeague = {
 let fillingAll = function (Json) {
   fillingLeague(Json.league);
   standings(Json.standings, 'east');
-  topPlayers(Json.topPlayers);
+  fillingTopPlayers(Json.topPlayers);
   fillMatches(Json.matches);
   calendar();
   

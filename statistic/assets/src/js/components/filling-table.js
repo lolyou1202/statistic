@@ -70,48 +70,42 @@ let standings = function (json) {
   })
 }
 
-let topPlayers = function (json) {
-  let fillingTopPlayers = function (json) {
-    let body = document.querySelector('.topPlayers__body');
-    body.innerHTML = '';
-  
-    for (let key in json) {
-      let li = document.createElement('li')
-      li.classList.add('topPlayers__body-item');
-      li.innerHTML = `
-        <div>
-          <span>${json[key].position}</span>
-        </div>
-        <div>
-          <span>
-            <div class="topPlayers__person-img"></div>
-              <div>
-                <p class="topPlayers__person-name">${json[key].player.person.name}</p>
-              <div>
-                <div class="topPlayers__person-team"></div>
-                <div class="topPlayers__person-position">${json[key].player.person.position}</div>
-              </div>
+let fillingTopPlayers = function (json) {
+  let body = document.querySelector('.topPlayers__body');
+  body.innerHTML = '';
+
+  for (let key in json) {
+    let li = document.createElement('li')
+    li.classList.add('topPlayers__body-item');
+    li.innerHTML = `
+      <div>
+        <span>${json[key].position}</span>
+      </div>
+      <div>
+        <span>
+          <div class="topPlayers__person-img"></div>
+            <div>
+              <p class="topPlayers__person-name">${json[key].player.person.name}</p>
+            <div>
+              <div class="topPlayers__person-team"></div>
+              <div class="topPlayers__person-position">${json[key].player.person.position}</div>
             </div>
-          </span>
-        </div>
-        <div>
-          <span>${json[key].value}</span>
-        </div>
-      `;
-      li.querySelector('.topPlayers__person-img').style.backgroundImage = `url(${json[key].player.team})`;
-      li.querySelector('.topPlayers__person-team').style.backgroundImage = `url(${json[key].player.person.img})`;
-  
-      body.appendChild(li);
-      if (Object.keys(json).length != Number(key) + 1) {
-        let hr = document.createElement('hr')
-        body.appendChild(hr);
-      }
+          </div>
+        </span>
+      </div>
+      <div>
+        <span>${json[key].value}</span>
+      </div>
+    `;
+    li.querySelector('.topPlayers__person-img').style.backgroundImage = `url(${json[key].player.team})`;
+    li.querySelector('.topPlayers__person-team').style.backgroundImage = `url(${json[key].player.person.img})`;
+
+    body.appendChild(li);
+    if (Object.keys(json).length != Number(key) + 1) {
+      let hr = document.createElement('hr')
+      body.appendChild(hr);
     }
   }
-
-  fillingTopPlayers(json)
 }
 
-
-
-export {standings, topPlayers}
+export {standings, fillingTopPlayers}

@@ -32,10 +32,7 @@
     display: none;
   }
   .sidebar {
-    display: block !important;
-  }
-  .sidebar-container {
-    display: block !important;
+    display: block;
   }
   .standings__caption {
     -ms-grid-columns: 20px minmax(142px, 1fr) (20px)[2] 38px;
