@@ -1,4 +1,5 @@
 let getPlayers = async (url, atribute, stadySeason) => {
+  console.log(url, atribute, stadySeason);
   let data = {
     list: [
     {
@@ -241,12 +242,11 @@ let topPlayers = function (json) {
     let listAtributes = document.querySelector('.atribute-selection .select-list');
     listAtributes.querySelectorAll('li').forEach((element) => {
       element.addEventListener('click', function(e) {
-        let atribute = document.querySelector('.topPlayers__caption div:nth-child(3) span').textContent;
-        atribute = element.textContent;
-
+        let atribute = document.querySelector('.topPlayers__caption div:nth-child(3) span');
+        atribute.textContent = element.textContent;
         let stadySeason = document.querySelector('.stadySeason-selection span').textContent;
 
-        getPlayers('/asd', atribute, stadySeason).then((data) => {
+        getPlayers('/asd', atribute.textContent, stadySeason).then((data) => {
           fillingTopPlayers(data.list);
         })
       })

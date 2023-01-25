@@ -33,10 +33,14 @@
     .right {
         display: none;
     }
+    .left {
+        grid-template-rows: 200px 1fr;
+    }
     .sidebar {
         display: block !important;
     }
     .standings {
+        height: calc(100vh - 260px);
         &__caption {
             grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 38px;
             grid-column-gap: 10px;
@@ -45,6 +49,7 @@
             }
         }
         &__body {
+            height: calc(100vh - 360px);
             &-item {
                 grid-template-columns: 20px minmax(142px, 1fr) repeat(2, 20px) 38px;
                 grid-column-gap: 10px;
@@ -60,5 +65,8 @@
             }
         }
     }
-
+    .league-img {
+        width: 80px;
+        height: 80px;
+    }
 }

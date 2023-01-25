@@ -879,8 +879,15 @@ a {
   .right {
     display: none;
   }
+  .left {
+    -ms-grid-rows: 200px 1fr;
+    grid-template-rows: 200px 1fr;
+  }
   .sidebar {
     display: block !important;
+  }
+  .standings {
+    height: calc(100vh - 260px);
   }
   .standings__caption {
     -ms-grid-columns: 20px minmax(142px, 1fr) (20px)[2] 38px;
@@ -889,6 +896,9 @@ a {
   }
   .standings__caption > div:nth-child(5) {
     display: none;
+  }
+  .standings__body {
+    height: calc(100vh - 360px);
   }
   .standings__body-item {
     -ms-grid-columns: 20px minmax(142px, 1fr) (20px)[2] 38px;
@@ -903,6 +913,10 @@ a {
   }
   .standings__body-item span .standings__team-img {
     margin-right: 6px;
+  }
+  .league-img {
+    width: 80px;
+    height: 80px;
   }
 }
 canvas {
