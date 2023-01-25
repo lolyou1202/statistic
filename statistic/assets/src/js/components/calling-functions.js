@@ -1,4 +1,4 @@
-import {standings, fillingTopPlayers} from './filling-table';
+import {standings, topPlayers} from './filling-table';
 import {fillMatches} from './matches';
 import {fillingLeague} from './league';
 import {calendar} from './calendar';
@@ -361,7 +361,11 @@ export const getLeague = async (url, e) => {
             percent: '0.23',
           }]
       },
-      topPlayers: [{
+      topPlayers: {
+        study: 'regular',
+        atribute: '+/- per game',
+        list: [
+        {
           position: '1',
           player: {
             team: 'static/img/pngegg.png',
@@ -481,7 +485,8 @@ export const getLeague = async (url, e) => {
           },
           value: '0.58',
         },
-      ],
+        ],
+      },
       matches: [
         {
           time: '12:00',
@@ -1003,7 +1008,11 @@ export const getLeague = async (url, e) => {
             percent: '0.23',
           }]
       },
-      topPlayers: [{
+      topPlayers: {
+        study: 'regular',
+        atribute: '+/- per game',
+        list: [
+        {
           position: '1',
           player: {
             team: 'static/img/pngegg.png',
@@ -1123,7 +1132,8 @@ export const getLeague = async (url, e) => {
           },
           value: '0.58',
         },
-      ],
+        ],
+      },
       matches: [
         {
           time: '12:00',
@@ -1645,7 +1655,11 @@ export const getLeague = async (url, e) => {
             percent: '0.23',
           }]
       },
-      topPlayers: [{
+      topPlayers: {
+        study: 'regular',
+        atribute: '+/- per game',
+        list: [
+        {
           position: '1',
           player: {
             team: 'static/img/pngegg.png',
@@ -1765,7 +1779,8 @@ export const getLeague = async (url, e) => {
           },
           value: '0.58',
         },
-      ],
+        ],
+      },
       matches: [
         {
           time: '12:00',
@@ -1955,7 +1970,7 @@ let NBA = {
         img: 'static/img/pngegg.png'
       }
     },
-    select: ['NBA', 'Euroleague', 'VTB League']
+    //select: ['NBA', 'Euroleague', 'VTB League']
   },
   standings: {
     east: [{
@@ -2289,7 +2304,11 @@ let NBA = {
         percent: '0.23',
       }]
   },
-  topPlayers: [{
+  topPlayers: {
+    study: 'regular',
+    atribute: '+/- per game',
+    list: [
+    {
       position: '1',
       player: {
         team: 'static/img/pngegg.png',
@@ -2409,7 +2428,8 @@ let NBA = {
       },
       value: '0.58',
     },
-  ],
+    ],
+  },
   matches: [
     {
       time: '12:00',
@@ -3859,7 +3879,7 @@ let VTBLeague = {
 let fillingAll = function (Json) {
   fillingLeague(Json.league);
   standings(Json.standings, 'east');
-  fillingTopPlayers(Json.topPlayers);
+  topPlayers(Json.topPlayers);
   fillMatches(Json.matches);
   calendar();
   

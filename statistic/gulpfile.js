@@ -178,21 +178,16 @@ const htmlInclude = () => {
 
 const runServer = () => {
   var proc = exec('venv\\Scripts\\activate.bat && '+ 'python backend/main.py runserver')
-  proc.stderr.on('data', function(data) {
-    process.stdout.write(data);
-  });
-
-  proc.stdout.on('data', function(data) {
-    process.stdout.write(data);
-  });
 };
 
 const watchFiles = () => {
-  runServer(),
   browserSync.init({
-      proxy: "127.0.0.1:5000",
-      port: "5000",
-      notify: false
+    server: {
+      baseDir: "assets/build"
+    },
+    host: "localhost",
+    port: "5000",
+    notify: false
   })
 
   watch(paths.srcScss, styles);

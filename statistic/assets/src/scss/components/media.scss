@@ -34,7 +34,7 @@
         display: none;
     }
     .sidebar {
-        display: block;
+        display: block !important;
     }
     .standings {
         &__caption {

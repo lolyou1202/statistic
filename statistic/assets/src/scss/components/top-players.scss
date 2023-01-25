@@ -16,7 +16,7 @@
             display: flex;
             align-items: center;
         }
-        .attribute-selection {
+        .atribute-selection {
             button {
                 width: 122px;
             }
@@ -50,6 +50,9 @@
             &:nth-child(2) span {
                 width: auto;
                 padding: 0 10px;
+            }
+            &:nth-child(3) span {
+                justify-content: flex-end;
             }
         }
         span {

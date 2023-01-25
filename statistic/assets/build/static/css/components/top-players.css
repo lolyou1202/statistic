@@ -27,7 +27,7 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.topPlayers__head .attribute-selection button {
+.topPlayers__head .atribute-selection button {
   width: 122px;
 }
 .topPlayers__head .stadySeason-selection {
@@ -66,6 +66,11 @@
 .topPlayers__caption > div:nth-child(2) span {
   width: auto;
   padding: 0 10px;
+}
+.topPlayers__caption > div:nth-child(3) span {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 .topPlayers__caption span {
   width: 100%;
